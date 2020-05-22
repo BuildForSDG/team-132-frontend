@@ -1,0 +1,41 @@
+.main{
+	padding-top: 100px;
+}
+.head{
+	font-size: 3em ; font-weight: lighter; color: green; padding-bottom: 30px;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+	font-size: 3.5rem;
+  }
+}
+
+.signup{
+	display: flex; justify-content: space-around; align-items: center; margin-bottom: 20px;
+}
+
+.one{
+	background-color: green !important;
+}
+
+.btn-one{
+	color: green !important; background-color: #ffffff;
+}
+.btn-two{
+	color: #ffffff !important; background-color: green;
+}
+.row {
+	border-top: 20px solid #ffffff;
+}
+.h-brand{
+	font-size: 3em;
+}
