@@ -54,19 +54,21 @@
 }
 
 .btn-one {
-	color: green !important;
-	background-color: #fff;
+  color: green !important;
+  background-color: #fff;
 }
 
 .btn-two {
-	color: #ffffff !important;
-	background-color: green;
+  color: #ffffff !important;
+  background-color: green;
 }
 
 .row {
-	border-top: 20px solid #fff;
+  border-top: 20px solid #fff;
 }
 
 .h-brand {
-	font-size: 3em;
+  font-size: 3em;
 }
+
+
