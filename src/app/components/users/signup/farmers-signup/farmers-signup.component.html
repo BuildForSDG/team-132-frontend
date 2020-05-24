@@ -13,7 +13,7 @@
 		 <div class="form-group"
 			[ngClass] = "{'error': fname.invalid && (fname.touched || fname.dirty || mouseOver)}"
 		 >
-				<label for="fname">Firstname:</label>
+				<label for="fname">Firstname *</label>
 				<input
 					type="text"
 					ngModel
@@ -34,7 +34,7 @@
 		  <div class="form-group"
 			  [ngClass] = "{'error': sname.invalid && (sname.touched || sname.dirty || mouseOver)}"
 		  >
-				<label for="username">Lastname:</label>
+				<label for="username">Lastname *</label>
 				<input
 					type="text"
 					ngModel
@@ -54,7 +54,7 @@
 			<div class="form-group"
 				[ngClass] = "{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}"
 			>
-					<label for="username">Username:</label>
+					<label for="username">Username *</label>
 					<input
 						type="text"
 						ngModel
@@ -72,6 +72,7 @@
 				</div>
 
 				<div class="form-group">
+					<label for="email">Email *</label>
 					<input
 						type="text"
 						name="email"
@@ -91,7 +92,7 @@
 			<div class="form-group"
 			     [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
 			>
-				<label for="password">Password:</label>
+				<label for="password">Password *</label>
 				<input
 					type="password"
 					ngModel
@@ -99,6 +100,7 @@
 					#pass = "ngModel"
 					class="form-control"
 					class="form-control"
+					id="password"
 					placeholder=" Password..."
 					required
 				>
@@ -110,18 +112,21 @@
 			<div class="form-group"
 			     [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
 	        >
-					<label for="c_password">Password:</label>
+					<label for="c_password">Confirm Password *</label>
 					<input
 						type="password"
 						ngModel
 						name="c_password"
 						#c_pass = "ngModel"
+						appconfirmpassword="password"
 						class="form-control"
+						id="c_password"
 						placeholder=" Confirm password..."
 						required
 					>
 					<div *ngIf="c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver)">
 						<em *ngIf="c_pass.errors.required">password is required.</em>
+						<em *ngIf="c_pass.errors.notEqual && !c_pass.errors.required">password does not match.</em>
 					</div>
 	        </div>
 

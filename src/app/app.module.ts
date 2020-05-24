@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/users/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserModule } from './lazyload/user/user.module';
+// import { ConfirmedEqualValidator } from './components/users/signup/clients-signup/confirmed.directive';
 
 @NgModule({
 	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent],
