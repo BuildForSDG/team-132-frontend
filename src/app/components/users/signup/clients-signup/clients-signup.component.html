@@ -91,44 +91,53 @@
 					</div>
 				</div>
 
-			<div class="form-group"
-			     [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
-			>
-				<label for="password">Password *</label>
-				<input
-					type="password"
-					ngModel
-					name="password"
-					#pass = "ngModel"
-					class="form-control"
-					class="form-control"
-					placeholder=" Password..."
-					required
-				>
-				<div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
-					<em *ngIf="pass.errors.required">password is required.</em>
-				</div>
-			</div>
+			<div ngModelGroup="passwordGroup"
+				 #passwordGroup="ngModelGroup"
+				 [ngClass] = "{'error':
+							   c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver) && !c_pass.errors.required}"
+		    >
+			   <div class="form-group"
+				   [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
+			   >
+				   <label for="password">Password *</label>
+				   <input
+					   type="password"
+					   ngModel
+					   name="password"
+					   #pass = "ngModel"
+					   class="form-control"
+					   class="form-control"
+					   (input)="c_pass.control.updateValueAndValidity()"
+					   id="password"
+					   placeholder=" Password..."
+					   required
+				   >
+			   <div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
+				   <em *ngIf="pass.errors.required">password is required.</em>
+			   </div>
+		       </div>
 
-			<div class="form-group"
-			     [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
-	        >
-					<label for="c_password">Confirm Password *</label>
-					<input
-						type="password"
-						ngModel
-						name="c_password"
-						#c_pass = "ngModel"
-						class="form-control"
-						appconfirmpassword="password"
-						placeholder=" Confirm password..."
-						required
-					>
-					<div *ngIf="c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver)">
-						<em *ngIf="c_pass.errors.required">password is required.</em>
-						<em *ngIf="c_pass.errors.notEqual && !c_pass.errors.required">password does not match.</em>
-					</div>
-	        </div>
+		   <div class="form-group"
+				[ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
+		   >
+			  <label for="c_password">Confirm Password *</label>
+			  <input
+				  type="password"
+				  ngModel
+				  name="c_password"
+				  #c_pass = "ngModel"
+				  appconfirmpassword="password"
+				  class="form-control"
+				  id="c_password"
+				  placeholder=" Confirm password..."
+				  required
+			  >
+			  <div *ngIf="c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver)">
+				  <em *ngIf="c_pass.errors.required">Confirm password.</em>
+				  <em *ngIf="c_pass.errors.notEqual && !c_pass.errors.required">password does not match.</em>
+			  </div>
+			</div>
+		  </div>
 
 			<span (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
 			<button type="submit" class="btn btn-outline-secondary btn-one" [disabled]="signUpForm.invalid || signUpForm.invalid">Save</button>

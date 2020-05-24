@@ -1,33 +1,47 @@
 .main {
-	padding-top: 10vh; height: 120vh;
+	padding-top: 10vh;
+	height: 120vh;
 }
-input{
-	width: 100%;  border-radius: 5px; border: .1px solid #eeeeee;
-	margin-bottom: 5px;
-  }
-  label{
-	color: #ffffff; font-weight: 900;
-  }
 
-  .error input{
-	background-color: rgb(241, 168, 168);
-  }
-  em{
-	color: red;
-	background-color: #ffffff;
+input {
+	width: 100%;
 	border-radius: 5px;
-  }
+	border: .1px solid #eee;
+	margin-bottom: 5px;
+}
 
-  .sub-main{
-	 border-radius: 10px; border: .5px solid green; background-color: green;
-  }
-  form {
+label {
+	color: #fff;
+	font-weight: 900;
+}
+
+.error input {
+	background-color: rgb(241, 168, 168);
+}
+
+em {
+	color: red;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.sub-main {
+	border-radius: 10px;
+	border: .5px solid green;
+	background-color: green;
+}
+
+form {
 	margin-bottom: 20px;
-  }
+}
 
-  .btn-one{
-	color: green !important; background-color: #ffffff; margin-right: 10px;
-   }
-   .btn-two{
-		color: green !important; background-color: #fff;
-   }
+.btn-one {
+	color: green !important;
+	background-color: #fff;
+	margin-right: 10px;
+}
+
+.btn-two {
+	color: green !important;
+	background-color: #fff;
+}

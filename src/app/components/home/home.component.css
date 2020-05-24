@@ -1,7 +1,8 @@
-.main{
+.main {
 	padding-top:0px;
 }
-.submain{
+
+.submain {
 	background-image: url('~src/assets/images/mt-1021-gallery-img05-bg.jpg');
 	background-position: center;
 	background-repeat:  no-repeat;
@@ -9,14 +10,23 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	margin-top: 0px; height: 60vh; padding-top:0;
+	margin-top: 0px;
+	height: 60vh;
+	padding-top:0;
 }
+
 .submain-child {
-	background-color: #ffffff !important; opacity: .9 !important;
+	background-color: #fff !important;
+	opacity: .9 !important;
 }
-.head{
-	font-size: 3em ; font-weight: lighter; color: green; padding-bottom: 30px;
+
+.head {
+	font-size: 3em;
+	font-weight: lighter;
+	color: green;
+	padding-bottom: 30px;
 }
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -32,23 +42,31 @@
   }
 }
 
-.signup{
-	display: flex; justify-content: space-around; align-items: center; margin-bottom: 20px;
+.signup {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
 }
 
-.one{
+.one {
 	background-color: green !important;
 }
 
-.btn-one{
-	color: green !important; background-color: #ffffff;
+.btn-one {
+	color: green !important;
+	background-color: #fff;
 }
-.btn-two{
-	color: #ffffff !important; background-color: green;
+
+.btn-two {
+	color: #ffffff !important;
+	background-color: green;
 }
+
 .row {
-	border-top: 20px solid #ffffff;
+	border-top: 20px solid #fff;
 }
-.h-brand{
+
+.h-brand {
 	font-size: 3em;
 }

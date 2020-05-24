@@ -1,7 +1,7 @@
-# IamNotCrazyJustSick
+## goOrganic
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/511596ade6fd452697016a287bb9d1e4)](https://app.codacy.com/gh/BuildForSDG/Team-220-Frontend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-220-Frontend&utm_campaign=Badge_Grade_Settings)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/292178a7-2f85-4b07-a740-b1d0d27bc026/deploy-status)](https://app.netlify.com/sites/iamnotcrazyjustsick/deploys)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/511596ade6fd452697016a287bb9d1e4)](https://app.codacy.com/gh/BuildForSDG/Team-132-Frontend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-132-Frontend&utm_campaign=Badge_Grade_Settings)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/292178a7-2f85-4b07-a740-b1d0d27bc026/deploy-status)](https://app.netlify.com/sites/goOrganic/deploys)
 
 We Want to Help find innovative ways that can link mental health specialists to your community.
 
