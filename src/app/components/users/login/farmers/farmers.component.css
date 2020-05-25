@@ -1,47 +1,47 @@
 .main {
-	padding-top: 10vh;
-	height: 100vh;
+  padding-top: 10vh;
+  height: 100vh;
 }
 
 input {
-	width: 100%;
-	border-radius: 5px;
-	border: .1px solid #eee;
-	margin-bottom: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 0.1px solid #eee;
+  margin-bottom: 5px;
 }
 
 label {
-	color: green;
-	font-weight: 900;
+  color: green;
+  font-weight: 900;
 }
 
-.error input{
-	background-color: rgb(241, 168, 168);
+.error input {
+  background-color: rgb(241, 168, 168);
 }
 
 em {
-	color: red;
-	background-color: #fff;
-	border-radius: 5px;
+  color: red;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .sub-main {
-	border-radius: 10px;
-	border: .5px solid green;
-	background-color: green;
+  border-radius: 10px;
+  border: 0.5px solid green;
+  background-color: green;
 }
 
 form {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .btn-one {
-	color: green !important;
-	background-color: #fff;
-	margin-right: 10px;
+  color: green !important;
+  background-color: #fff;
+  margin-right: 10px;
 }
 
 .btn-two {
-	color: green !important;
-	background-color: #fff;
+  color: green !important;
+  background-color: #fff;
 }

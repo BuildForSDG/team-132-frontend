@@ -1,28 +1,25 @@
 .container {
-	height: 100vh;
+  height: 100vh;
 }
 
 .signin {
-	padding-top: 30vh;
+  padding-top: 30vh;
 }
 
-
 .btn-one {
-	color: green !important;
-	background-color: #fff;
-    border: 1px solid green;
+  color: green !important;
+  background-color: #fff;
+  border: 1px solid green;
 }
 
 .btn-two {
-	color: #fff !important;
-    background-color: green;
+  color: #fff !important;
+  background-color: green;
 }
 
 .head {
-	font-size: 4em;
-	font-weight: lighter;
-	color: green;
-	padding-bottom: 30px;
+  font-size: 4em;
+  font-weight: lighter;
+  color: green;
+  padding-bottom: 30px;
 }
-
-
