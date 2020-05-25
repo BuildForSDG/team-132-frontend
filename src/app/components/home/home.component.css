@@ -1,0 +1,77 @@
+.main {
+  padding-top: 0;
+}
+
+.submain {
+  background-image: url('~src/assets/images/mt-1021-gallery-img05-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-top: 0;
+  height: 70vh;
+  padding-top: 0;
+}
+
+#submain-child {
+  background-color: #fff;
+  opacity: 0.9;
+}
+
+.head {
+  font-size: 3em;
+  font-weight: lighter;
+  color: green;
+  padding-bottom: 30px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.signup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six {
+  background-color: green;
+}
+
+#btn-one {
+  color: green;
+  background-color: #fff;
+}
+
+#btn-two {
+  color: #fff;
+  background-color: green;
+}
+
+.row {
+  border-top: 20px solid #fff;
+}
+
+.h-brand {
+  font-size: 3em;
+}
