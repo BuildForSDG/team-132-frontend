@@ -15,9 +15,9 @@
   padding-top: 0;
 }
 
-.submain-child {
-  background-color: #fff !important;
-  opacity: 0.9 !important;
+#submain-child {
+  background-color: #fff;
+  opacity: 0.9;
 }
 
 .head {
@@ -49,17 +49,22 @@
   margin-bottom: 20px;
 }
 
-.one {
-  background-color: green !important;
+#one,
+#two,
+#three,
+#four,
+#five,
+#six {
+  background-color: green;
 }
 
-.btn-one {
-  color: green !important;
+#btn-one {
+  color: green;
   background-color: #fff;
 }
 
-.btn-two {
-  color: #fff !important;
+#btn-two {
+  color: #fff;
   background-color: green;
 }
 

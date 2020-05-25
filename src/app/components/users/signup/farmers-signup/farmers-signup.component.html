@@ -138,9 +138,9 @@
 
 
 			<span (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
-			<button type="submit" class="btn btn-outline-secondary btn-one" [disabled]="signUpForm.invalid || signUpForm.invalid">Save</button>
+			<button type="submit" class="btn btn-outline-secondary" id="btn-one" [disabled]="signUpForm.invalid || signUpForm.invalid">Save</button>
 			</span>
-			<button type="button" class="btn btn-outline-secondary btn-two" (click)="cancel()">Cancel</button>
+			<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
 
         </form>
        <br><br>

@@ -35,13 +35,13 @@ form {
   margin-bottom: 20px;
 }
 
-.btn-one {
-  color: green !important;
+#btn-one {
+  color: green;
   background-color: #fff;
   margin-right: 10px;
 }
 
-.btn-two {
-  color: green !important;
+#btn-two {
+  color: green;
   background-color: #fff;
 }

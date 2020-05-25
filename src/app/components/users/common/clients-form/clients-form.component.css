@@ -6,14 +6,15 @@
   padding-top: 30vh;
 }
 
-.btn-one {
-  color: green !important;
+#btn-one,
+#btn-three {
+  color: green;
   background-color: #fff;
   border: 1px solid green;
 }
 
-.btn-two {
-  color: #fff !important;
+#btn-two {
+  color: #fff;
   background-color: green;
 }
 
