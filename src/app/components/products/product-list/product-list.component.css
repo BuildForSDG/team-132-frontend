@@ -1,20 +1,19 @@
 .fa {
-	margin-left: 10px;
-	color: green;
-	font-size: 24px;
-  }
+  margin-left: 10px;
+  color: green;
+  font-size: 24px;
+}
 
-  input {
-	height: 20px;
-	margin-left: 5px;
-  }
+input {
+  height: 20px;
+  margin-left: 5px;
+}
 
-  h2 {
-	color: white;
-	margin-top: 20px;
-  }
+h2 {
+  color: white;
+  margin-top: 20px;
+}
 
-  .main {
-	  padding-top: 15vh;
-  }
-
+.main {
+  padding-top: 15vh;
+}
