@@ -1,0 +1,45 @@
+<div class="main">
+ <div class="container-fluid" id="matCard">
+	<div>
+		<div class="amos" *ngIf="posts.length > 0">
+			<div class="isLoading">
+			  <div>
+				<mat-card *ngFor="let post of posts">
+				  <div class="left">
+					<p id="title">
+					  {{post?.productName}}
+					</p>
+				  </div>
+				  <mat-card-content>
+					<div>
+						<p>{{post.quatity}}</p>
+						<p>{{post.amount}}</p>
+						<p>{{post.details}}</p>
+					</div>
+					<div>
+					  <p class="descriptio">
+						{{post?.description}}
+					  </p>
+					</div>
+				  </mat-card-content>
+				  <mat-card-footer>
+					<mat-action-row>
+					  <button >Edit</button>
+					  <button >Delete</button>
+					</mat-action-row>
+				  </mat-card-footer>
+				</mat-card>
+			  </div>
+			</div>
+	  </div>
+	</div>
+	<br>
+	<div class="err">
+	  <p *ngIf="posts.length <= 0">
+		No products available
+	  </p>
+	  <br>
+	  <button class="btn btn-outline-secondary" style="background-color: rgb(56, 8, 100); color: #fff;" routerLink='/user/agro-companies'>Back</button>
+	</div>
+ </div>
+</div>

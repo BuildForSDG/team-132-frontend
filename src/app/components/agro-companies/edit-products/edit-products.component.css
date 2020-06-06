@@ -1,0 +1,56 @@
+.main {
+  padding-top: 10vh;
+  background-color: #fff;
+}
+
+#matCard {
+  min-height: 80vh;
+  background-color: green;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border-radius: 5px;
+  border: 0.1px solid #eee;
+  margin-bottom: 5px;
+}
+
+label {
+  color: #fff;
+  font-weight: 500;
+}
+
+.error input,
+.error textarea,
+.error select {
+  background-color: rgb(241, 168, 168);
+}
+
+em {
+  color: red;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#btn-one {
+  background-color: #fff;
+  color: green;
+  margin-right: 10px;
+}
+
+#btn-two {
+  background-color: rgb(47, 4, 78);
+  color: #fff;
+}
+
+#btn-one:hover {
+  background-color: gray;
+  color: green;
+}
+
+#btn-two:hover {
+  background-color: #fff;
+  color: rgb(47, 4, 78);
+}

@@ -6,3 +6,8 @@ li a:active {
   margin: 0;
   padding: 0;
 }
+#navbar {
+	min-height: 13vh;
+	z-index: 1;
+	box-shadow: 0 0.2px 0 0.6px #999;
+}
