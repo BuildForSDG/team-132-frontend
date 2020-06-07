@@ -1,0 +1,62 @@
+.main {
+  padding-top: 20vh;
+  background-color: #fff;
+}
+
+#matCard {
+  min-height: 80vh;
+  background-color: rgb(189, 205, 223);
+}
+
+#row-one {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  color: green;
+}
+
+#btn-three {
+  color: #fff;
+  background-color: rgb(59, 7, 126);
+  margin-right: 10px;
+}
+
+.cart-item {
+  width: 80%;
+  background-color: green;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summary {
+  width: 80%;
+  border: 1px solid green;
+  background-color: rgb(216, 231, 216);
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-item-child {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .fa-shopping-cart {
+    font-size: 3em;
+    color: green;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .fa-shopping-cart {
+    font-size: 3em;
+    color: green;
+  }
+}

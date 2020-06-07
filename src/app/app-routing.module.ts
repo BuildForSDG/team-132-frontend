@@ -12,11 +12,13 @@ import { ProductListComponent } from './components/products/product-list/product
 import { ProductDetailComponent } from './components/products/product-detail/product-detail.component';
 import { ProductThumbnailComponent } from './components/products/product-thumbnail/product-thumbnail.component';
 import { StarComponent } from './components/products/star/star.component';
+import { CartComponent } from './components/products/cart/cart.component';
 // import { ConfirmedEqualValidatorDirective } from './components/users/signup/clients-signup/confirmed.directive';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
 	{ path: 'products', component: ProductListComponent },
+	{ path: 'products/cart', component: CartComponent },
 	{ path: 'products/:id', component: ProductDetailComponent },
 	{ path: 'user/agro-companies', component: UserDashbooardComponent },
 	{ path: 'user/agro-companies/post', component: PostProductsComponent },
@@ -35,7 +37,8 @@ const routes: Routes = [
 		StarComponent,
 		ProductListComponent,
 		ProductDetailComponent,
-		ProductThumbnailComponent
+		ProductThumbnailComponent,
+		CartComponent
 	],
 	imports: [RouterModule.forRoot(routes), MaterialModule, ReactiveFormsModule, FormsModule, HttpClientModule],
 	exports: [RouterModule, MaterialModule, ReactiveFormsModule, FormsModule, HttpClientModule]

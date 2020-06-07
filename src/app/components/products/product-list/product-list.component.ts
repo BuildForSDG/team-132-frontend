@@ -49,7 +49,7 @@ export class ProductListComponent implements OnInit {
 	OnRouting(id) {
 		this.productService.getProduct(+id).subscribe({
 			next: (x) => {
-				this.router.navigate([`/home/products/${id}`]);
+				this.router.navigate([`/products/${id}`]);
 			}
 		});
 	}

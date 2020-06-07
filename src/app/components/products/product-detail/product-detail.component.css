@@ -1,3 +1,53 @@
-p {
-  color: black;
+img {
+  width: 300px;
+  height: 200px;
+}
+
+.main {
+  padding-top: 15vh;
+}
+
+.details {
+  background-color: rgb(0, 119, 255);
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#btn_three {
+  color: #fff;
+  margin-top: 20px;
+  background-color: rgb(59, 7, 126);
+  margin-right: 10px;
+  min-width: 100px;
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  img {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  img {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  img {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  img {
+    width: 30%;
+  }
 }
