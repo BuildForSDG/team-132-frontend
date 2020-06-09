@@ -15,23 +15,53 @@
 	</div>
 	<br>
     <div class="container-fluid">
-		<div class="row">
+		<div class="row" *ngIf="products">
 			<div class="col-md-6">
-				<div id="one" class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+				<div id="one" class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5  text-white overflow-hidden">
 					<div class="my-3 py-3">
-					  <h2 class="display-5">Top Product</h2>
-					  <p class="lead">This is the best selling product this month.</p>
+					  <h2 class="display-5 text-center ">Top Product</h2>
+					  <p class="lead text-center">This is the best selling product this month.</p>
 					</div>
-					<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0"></div>
+					<div class="bg-light shadow-sm mx-auto child">
+						<h3 class="display-3 text-success font-weight-bold">{{productOne.name}}</h3>
+						<img [src]="productOne?.imageUrl"  [alt]="productOne?.name">
+						<div class="bg-success">
+						  <p class="mt-2 pt-2 text-left ml-2 mb-1">
+							{{productOne?.price | currency:"ksh ": "symbol": "1.2-2"}}
+						  </p>
+						  <app-star [rating]="productOne?.starRating"></app-star>
+						  <p class="text-left ml-2 mb-1">
+							Serial: {{productOne?.productCode}}
+						  </p>
+						  <p class="text-left ml-2 mb-1 text-justify">
+							{{productOne?.description}}
+						  </p>
+						 </div>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-					<div class="my-3 p-3">
+					<div class="my-3 p-3 text-success">
 					  <h2 class="display-5">New Products</h2>
 					  <p class="lead">Some of our products.</p>
 					</div>
-					<div id="two" class="shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0"></div>
+					<div id="two" class="shadow-sm mx-auto child bg-light" id="childA">
+						<h3 class="display-3 text-success font-weight-bold">{{productTwo.name}}</h3>
+						<img [src]="productTwo?.imageUrl"  [alt]="productOne?.name">
+						<div class="bg-success text-white">
+							<p class="mt-2 pt-2 text-left ml-2 mb-1">
+								{{productTwo?.price | currency:"ksh ": "symbol": "1.2-2"}}
+							  </p>
+							  <app-star [rating]="productTwo?.starRating"></app-star>
+							  <p class="text-left ml-2 mb-1">
+								Serial: {{productTwo?.productCode}}
+							  </p>
+							  <p class="text-left ml-2 mb-1">
+								{{productTwo?.description}}
+							  </p>
+						 </div>
+					  </div>
 				  </div>
 			</div>
 		</div>
@@ -39,8 +69,8 @@
 			<div class="col-md-6">
 				<div id="three" class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
 					<div class="my-3 py-3">
-					  <h2 class="display-5">One headline</h2>
-					  <p class="lead">And an even wittier subheading.</p>
+					  <h2 class="display-5">About Us</h2>
+					  <p class="lead">Lorem ipsum dolor sit amet..</p>
 					</div>
 					<div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0"></div>
 				</div>
@@ -48,8 +78,8 @@
 			<div class="col-md-6">
 				<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 p-3">
-					  <h2 class="display-5">Two headline</h2>
-					  <p class="lead">And an even wittier subheading.</p>
+					  <h2 class="display-5">Services</h2>
+					  <p class="lead">Lorem ipsum dolor sit amet..</p>
 					</div>
 					<div id="four" class="shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0"></div>
 				  </div>
@@ -59,8 +89,8 @@
 			<div class="col-md-6">
 				<div id="five" class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
 					<div class="my-3 py-3">
-					  <h2 class="display-5">One headline</h2>
-					  <p class="lead">And an even wittier subheading.</p>
+					  <h2 class="display-5">Agro-Companies</h2>
+					  <p class="lead">Lorem ipsum dolor sit amet.</p>
 					</div>
 					<div class="shadow-sm mx-auto bg-light" style="width: 80%; height: 300px; border-radius: 21px 21px 0"></div>
 				</div>
@@ -68,8 +98,8 @@
 			<div class="col-md-6">
 				<div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
 					<div class="my-3 p-3">
-					  <h2 class="display-5">Two headline</h2>
-					  <p class="lead">And an even wittier subheading.</p>
+					  <h2 class="display-5">Insurance</h2>
+					  <p class="lead">Lorem ipsum dolor sit amet.</p>
 					</div>
 					<div id="six" class="shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0"></div>
 				  </div>
@@ -79,6 +109,7 @@
 	<br>
 	<br>
 </div>
+
 <!--	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 		<div class="col-md-6 p-lg-6 mx-auto my-5">
 		  <h1 class="display-3">goOrganic</h1>

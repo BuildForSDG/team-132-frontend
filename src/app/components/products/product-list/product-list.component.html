@@ -1,0 +1,10 @@
+<div class="container main">
+	<h2 class="text-white bg-success py-2 pl-2 font-weight-bold">Our Top Products</h2>
+	<hr>
+	<div class="row container">
+	  <span><input type="text" class="form-control" [(ngModel)]="listfilter" placeholder="search..."></span>
+	  <span><i class="fa fa-search"></i></span>
+	</div>
+	<br>
+	<app-product-thumbnail [products]="filteredArr" (onRoute)="OnRouting($event)"></app-product-thumbnail>
+  </div>

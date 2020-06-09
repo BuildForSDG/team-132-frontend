@@ -1,0 +1,9 @@
+.main {
+  padding-top: 10vh;
+  background-color: #fff;
+}
+
+#matCard {
+  min-height: 80vh;
+  background-color: rgb(232, 236, 232);
+}

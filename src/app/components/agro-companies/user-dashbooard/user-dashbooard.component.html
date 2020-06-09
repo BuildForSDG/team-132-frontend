@@ -1,0 +1,56 @@
+<div class="container-fluid main">
+	<mat-card id="matCard">
+		<div>
+			<div>PROFILE INFORMATION</div>
+			<div>
+				<h1>Dashboard Details.</h1>
+				<div class="row">
+					<div class="col-md-3">
+						<button class="btn btn-outline-secondary one" [routerLink]="'/user/agro-companies/post'">Post Products</button>
+					</div>
+					<div class="col-md-3">
+						<button class="btn btn-outline-secondary one" [routerLink]="'/user/agro-companies/view'">View Products</button>
+					</div>
+					<div class="col-md-3">
+                        <button class="btn btn-outline-secondary one">Organize Events</button>
+					</div>
+				</div>
+				<br>
+				<div>
+					<mat-accordion>
+						<mat-expansion-panel (opened)="panelOpenState = true"
+											 (closed)="panelOpenState = false" id="matExpansionPanel">
+						  <mat-expansion-panel-header>
+							<mat-panel-title id="matPanelTitle">
+							  Sells and Payments
+							</mat-panel-title>
+							<mat-panel-description>
+							  The panel {{panelOpenState ? 'open' : 'closed'}}
+							</mat-panel-description>
+						  </mat-expansion-panel-header>
+						  <p>I'm visible because I am open</p>
+						</mat-expansion-panel>
+					  </mat-accordion>
+				</div>
+				<br><br>
+				<div>
+					<mat-accordion>
+						<mat-expansion-panel (opened)="panelOpenState = true"
+											 (closed)="panelOpenState = false">
+						  <mat-expansion-panel-header>
+							<mat-panel-title>
+							  Account Informatio
+							</mat-panel-title>
+							<mat-panel-description>
+							  The panel {{panelOpenState ? 'open' : 'closed'}}
+							</mat-panel-description>
+						  </mat-expansion-panel-header>
+						  <p>I'm visible because I am open</p>
+						</mat-expansion-panel>
+					  </mat-accordion>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+	<br>
+</div>
