@@ -75,3 +75,46 @@
 .h-brand {
   font-size: 3em;
 }
+
+#childA {
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: green;
+}
+
+@media screen and (max-width: 600px) {
+	img {
+	  margin: 0;
+	  padding: 0;
+	  width: 100%;
+	  height: 250px;
+	  border-radius: 21px 21px 0;
+	}
+
+	.child {
+	  width: 90%;
+	  min-height: 300px;
+	  border-radius: 21px 21px 0;
+	}
+  }
+
+  @media screen and (min-width: 600px) {
+	img {
+	  margin: 0;
+	  padding: 0;
+	  width: 100%;
+	  height: 300px;
+	  border-radius: 21px 21px 0;
+	}
+
+	.child {
+	  width: 80%;
+	  min-height: 300px;
+	  border-radius: 21px 21px 0;
+	}
+
+	.side {
+	  margin-left: 0;
+	  border-left: 3px solid rgb(74, 146, 212);
+	}
+  }

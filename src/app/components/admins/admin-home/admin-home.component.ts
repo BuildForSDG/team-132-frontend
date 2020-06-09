@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-admin-home',
@@ -16,33 +17,35 @@ export class AdminHomeComponent implements OnInit {
 
 	farmers = false;
 
-	constructor() {}
+	constructor(private router: Router) {}
 
 	ngOnInit(): void {}
 
+	login() {
+		this.router.navigate(['/admin/adminlogin']);
+	}
+
+	register() {
+		this.router.navigate(['/admin/adminregister']);
+	}
+
 	homeF() {
-		this.home = true;
-		return this.home;
+		this.router.navigate(['/admin/main']);
 	}
 
 	profileF() {
-		this.profile = true;
-		return this.profile;
+		this.router.navigate(['/admin/adminprofile']);
 	}
 
 	agroCompF() {
-		this.agroComp = true;
-		this.home = false;
-		return this.agroComp;
+		this.router.navigate(['/admin/agrocompanies']);
 	}
 
 	insuranceF() {
-		this.insurance = true;
-		return this.insurance;
+		this.router.navigate(['/admin/insurance']);
 	}
 
 	farmersF() {
-		this.farmers = true;
-		return this.farmers;
+		this.router.navigate(['/admin/farmers']);
 	}
 }

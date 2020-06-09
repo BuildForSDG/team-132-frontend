@@ -1,48 +1,48 @@
 <div class="fluid-container main">
 	<div class="sidebar-container">
-		<div class="sidebar-logo">
+		<div class="sidebar-logo bg-success">
 		  goOrganic
 		</div>
 		<ul class="sidebar-navigation">
 		  <li class="header">Admin Panel</li>
 		  <li>
-			<a href="javascript:void()" (click)="homeF() && !agroCompF()">
+			<a (click)="homeF()">
 			  <i class="fa fa-home" aria-hidden="true"></i> AdminHome
 			</a>
 		  </li>
 		  <li>
-			<a href="#">
+			<a (click)="profileF()">
 			  <i class="fa fa-tachometer" aria-hidden="true"></i> Profile
 			</a>
 		  </li>
 		  <li>
-			<a href="#">
-			  <i class="fa fa-tachometer" aria-hidden="true"></i> Login
+			<a (click)="login()">
+			  <i  class="fa fa-tachometer" aria-hidden="true"></i> Login
 			</a>
 		  </li>
 		  <li>
-			<a href="#">
+			<a (click)="register()">
 			  <i class="fa fa-tachometer" aria-hidden="true"></i> Register
 			</a>
 		  </li>
 		  <li>
-			<a href="#">
+			<a href="javascript:void()">
 			  <i class="fa fa-tachometer" aria-hidden="true"></i> Logout
 			</a>
 		  </li>
 		  <li class="header">Another Menu</li>
 		  <li>
-			<a href="javascript:void()" (click)="agroCompF()">
+			<a (click)="agroCompF()">
 			  <i class="fa fa-users" aria-hidden="true"></i> Agro-Companies
 			</a>
 		  </li>
 		  <li>
-			<a href="javascript:void()" (click)="insuranceF()">
+			<a (click)="insuranceF()">
 			  <i class="fa fa-cog" aria-hidden="true"></i> Insurance
 			</a>
 		  </li>
 		  <li>
-			<a href="javascript:void()" (click)="farmersF()">
+			<a (click)="farmersF()">
 			  <i class="fa fa-cog" aria-hidden="true"></i> Farmers
 			</a>
 		  </li>
@@ -59,17 +59,14 @@
 		<div class="container-fluid">
 
 		  <!-- Main component for a primary marketing message or call to action -->
-		  <div *ngIf="homeF() && !agroComp" class="jumbotron">
-			<h1>Admin Panel</h1>
+		  <div class="jumbotron">
+			<h1>Admin Home</h1>
 			<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
 			<p>To see the difference between static and fixed top navbars, just scroll.</p>
 			<p>
 			  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Admin &raquo;</a>
 			</p>
 		  </div>
-		  <app-agro-companies *ngIf="!homeF() && !agroCompF()" ></app-agro-companies>
-		  <app-insurance ></app-insurance>
-		  <app-farmers ></app-farmers>
 
 		</div>
 	  </div>
