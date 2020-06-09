@@ -25,7 +25,13 @@ const routes: Routes = [
 	{ path: 'user/agro-companies/view', component: ViewProductsComponent },
 	{ path: 'user/agro-companies/edit', component: EditProductsComponent },
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-	{ path: 'user', loadChildren: () => import('./lazyload/user/user.module').then((m) => m.UserModule) }
+	{ path: 'user', loadChildren: () => import('./lazyload/user/user.module').then((m) => m.UserModule) },
+	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+	{
+		path: 'admin',
+		// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+		loadChildren: () => import('./components/admins/admins/admins.module').then((m) => m.AdminsModule)
+	}
 ];
 @NgModule({
 	declarations: [
