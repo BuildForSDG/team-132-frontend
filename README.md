@@ -65,4 +65,25 @@ It's powerful to always give credit.
 
 ## LICENSE
 
+
 MIT
+
+### Version
+1.0.0
+
+
+### Installation
+
+Install the dependencies
+
+```sh
+$ npm install
+```
+Run app
+
+```sh
+$ npm start
+```
+
+
+
