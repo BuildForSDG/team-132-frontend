@@ -8,18 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/users/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AgroSignupComponent } from './components/users/signup/agro-signup/agro-signup.component';
-import { AgroLoginComponent } from './components/users/login/agro-login/agro-login.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		NavbarComponent,
-		DashboardComponent,
-		FooterComponent,
-		AgroSignupComponent,
-		AgroLoginComponent
-	],
+	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule],
 	providers: [],
 	bootstrap: [AppComponent]
