@@ -10,9 +10,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/users/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserModule } from './lazyload/user/user.module';
+import { AgroSignupComponent } from './components/users/signup/agro-signup/agro-signup.component';
+import { AgroLoginComponent } from './components/users/login/agro-login/agro-login.component';
 
 @NgModule({
-	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent],
+	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent, AgroSignupComponent, AgroLoginComponent],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, UserModule, BrowserAnimationsModule],
 	providers: [],
 	bootstrap: [AppComponent]
