@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // eslint-disable-next-line import/no-unresolved
 import { ClientsFormComponent } from 'src/app/components/users/common/clients-form/clients-form.component';
 // eslint-disable-next-line import/no-unresolved
@@ -39,7 +39,7 @@ const routes: Routes = [
 		FarmersSignupComponent,
 		ConfirmedEqualValidatorDirective
 	],
-	imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
-	exports: [RouterModule]
+	imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule],
+	exports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class UserModule {}

@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/default
-import app from '../src/index';
+// eslint-disable-next-line import/extensions
+// eslint-disable-next-line import/default
+import app from '../src/index.js';
 
 describe('app module', () => {
 	test('it exists', async () => {
