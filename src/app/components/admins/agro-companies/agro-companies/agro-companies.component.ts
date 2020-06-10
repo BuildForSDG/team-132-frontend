@@ -11,14 +11,6 @@ export class AgroCompaniesComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	login() {
-		this.router.navigate(['/admin/adminlogin']);
-	}
-
-	register() {
-		this.router.navigate(['/admin/adminregister']);
-	}
-
 	homeF() {
 		this.router.navigate(['/admin/main']);
 	}
@@ -37,5 +29,9 @@ export class AgroCompaniesComponent implements OnInit {
 
 	farmersF() {
 		this.router.navigate(['/admin/farmers']);
+	}
+
+	productsF() {
+		this.router.navigate(['/admin/products']);
 	}
 }

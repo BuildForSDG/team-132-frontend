@@ -38,4 +38,8 @@ export class InsuranceComponent implements OnInit {
 	farmersF() {
 		this.router.navigate(['/admin/farmers']);
 	}
+
+	productsF() {
+		this.router.navigate(['/admin/products']);
+	}
 }

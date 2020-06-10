@@ -9,6 +9,7 @@ import { FarmersAdminComponent } from '../farmers/farmers/farmers.component';
 import { AdminLoginComponent } from '../admin-auth/admin-login/admin-login.component';
 import { AdminRegisterComponent } from '../admin-auth/admin-register/admin-register.component';
 import { AdminProfileComponent } from '../admin-auth/admin-profile/admin-profile.component';
+import { AdminProdComponent } from '../admin-prod/admin-prod.component';
 
 // eslint-disable-next-line import/named
 const AdminRoutes: Routes = [
@@ -18,7 +19,8 @@ const AdminRoutes: Routes = [
 	{ path: 'adminprofile', component: AdminProfileComponent },
 	{ path: 'farmers', component: FarmersAdminComponent },
 	{ path: 'agrocompanies', component: AgroCompaniesComponent },
-	{ path: 'insurance', component: InsuranceComponent }
+	{ path: 'insurance', component: InsuranceComponent },
+	{ path: 'products', component: AdminProdComponent }
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const AdminRoutes: Routes = [
 		InsuranceComponent,
 		AdminLoginComponent,
 		AdminRegisterComponent,
-		AdminProfileComponent
+		AdminProfileComponent,
+		AdminProdComponent
 	],
 	imports: [CommonModule, RouterModule.forChild(AdminRoutes), FormsModule, ReactiveFormsModule],
 	exports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule]

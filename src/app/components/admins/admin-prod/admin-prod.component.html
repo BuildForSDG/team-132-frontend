@@ -49,15 +49,53 @@
 		<div class="container-fluid">
 
 		  <!-- Main component for a primary marketing message or call to action -->
-		  <div class="jumbotron">
-			<h1>Admin Home</h1>
-			<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-			<p>To see the difference between static and fixed top navbars, just scroll.</p>
-			<p>
-			  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Admin &raquo;</a>
-			</p>
+		  <div class='card'>
+			<div class='card-header text-success font-weight-bold'>
+			  Products
+			</div>
+			<div class='card-body'>
+			  <div class='row'>
+				<div class='col-md-2'>Filter</div>
+			  <div class='table-responsive'>
+				<table class='table'
+					   *ngIf='products && products.length'>
+				  <thead>
+					<tr>
+					  <th>
+						<button class='btn btn-success'
+								(click)='toggleImage()'>
+						  {{showImage ? 'Hide' : 'Show'}} Image
+						</button>
+					  </th>
+					  <th>Product</th>
+					  <th>Code</th>
+					  <th>Available</th>
+					  <th>Price</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr *ngFor='let product of products'>
+					  <td>
+						<img *ngIf='showImage'
+							 [src]='product.imageUrl'
+							 [style.width.px]='imageWidth'
+							 [style.margin.px]='imageMargin'>
+					  </td>
+					  <td>
+						  {{product.name}}
+					  </td>
+					  <td>{{ product.productCode}}</td>
+					  <td>{{ product.releaseDate }}</td>
+					  <td>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</td>
+                      <td><Button class="btn btn-danger">Delete</Button></td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			</div>
 		  </div>
 
 		</div>
 	  </div>
 </div>
+
