@@ -72,10 +72,7 @@ MIT
 
 ## Installation
 
-Install the dependencies
-npm install
-Run app
-npm start
+Install the dependencies 1. npm install 2. Run app 3. npm start
 
 
 
