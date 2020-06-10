@@ -45,3 +45,7 @@ form {
   color: green;
   background-color: #fff;
 }
+
+#log {
+  cursor: pointer;
+}
