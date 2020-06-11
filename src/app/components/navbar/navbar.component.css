@@ -1,14 +1,14 @@
 li > a:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .nav-link {
-	color:green;
+  color: green;
 }
 
 li > a:active {
-	border: 2px solid green;
-	border-radius: 5px;
+  border: 2px solid green;
+  border-radius: 5px;
 }
 
 .h-brand {
@@ -24,13 +24,11 @@ li > a:active {
 }
 
 .dropdown-item {
-	color: green;
-	background-color: #eee;
+  color: green;
+  background-color: #eee;
 }
 
 .dropdown-item:hover {
   background-color: green;
   color: #fff;
 }
-
-

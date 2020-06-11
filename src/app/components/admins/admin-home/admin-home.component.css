@@ -15,9 +15,15 @@
   color: #fff;
 }
 
+.content-container {
+  padding-top: 20px;
+  padding-left: 220px;
+}
+
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
   font-size: 20px;
+  background-color: #2574a9;
 }
 
 .sidebar-navigation {
@@ -53,7 +59,7 @@
 }
 
 .sidebar-navigation li::before {
-  background-color: green;
+  background-color: #2574a9;
   position: absolute;
   content: '';
   height: 100%;
@@ -78,10 +84,4 @@
 
 .sidebar-navigation .header::before {
   background-color: transparent;
-}
-
-.content-container {
-  padding-top: 20px;
-  padding-left: 220px;
-  overflow-y: hidden;
 }
