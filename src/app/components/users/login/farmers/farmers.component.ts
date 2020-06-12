@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { FarmersService } from 'src/app/services/farmers.service';
 
 @Component({
 	selector: 'app-farmers',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class FarmersComponent implements OnInit {
 	mouseOver;
 
-	constructor(private router: Router) {}
+	constructor(private router: Router, private farmer: FarmersService) {}
 
 	ngOnInit() {}
 
@@ -21,6 +22,15 @@ export class FarmersComponent implements OnInit {
 		}
 
 		console.log(form.value);
+
+		const obj = {
+			username: form.value.username,
+			password: form.value.password
+		};
+
+		this.farmer.login(obj);
+
+		this.router.navigate(['/dashboard/farmer-dashboard']);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type

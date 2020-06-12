@@ -36,6 +36,11 @@ const routes: Routes = [
 		path: 'home',
 		// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 		loadChildren: () => import('./components/information/info/info.module').then((m) => m.InfoModule)
+	},
+	{
+		path: 'dashboard',
+		// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+		loadChildren: () => import('./components/dashboard/dashboard/dashboard.module').then((m) => m.DashboardModule)
 	}
 ];
 @NgModule({
