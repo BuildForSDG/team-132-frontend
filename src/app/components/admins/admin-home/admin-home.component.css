@@ -23,7 +23,7 @@
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
   font-size: 20px;
-  background-color: #2574a9;
+  background-color: green;
 }
 
 .sidebar-navigation {
@@ -59,7 +59,7 @@
 }
 
 .sidebar-navigation li::before {
-  background-color: #2574a9;
+  background-color: green;
   position: absolute;
   content: '';
   height: 100%;

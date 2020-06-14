@@ -21,21 +21,21 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-			  "src/assets",
-			  "src/api",
+              "src/assets",
+              "src/api",
               "src/_redirects",
               "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-			  "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-			  "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": [
-				"./node_modules/jquery/dist/jquery.js",
-				"./node_modules/@popperjs/core/dist/umd/popper.js",
-				"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/@popperjs/core/dist/umd/popper.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// eslint-disable-next-line import/no-unresolved
+import { MaterialModule } from 'src/app/angular-material/material/material.module';
 import { InsuranceComponent } from '../insu-companies/insurance/insurance.component';
 import { AgroCompaniesComponent } from '../agro-companies/agro-companies/agro-companies.component';
 import { AdminHomeComponent } from '../admin-home/admin-home.component';
@@ -34,7 +36,7 @@ const AdminRoutes: Routes = [
 		AdminProfileComponent,
 		AdminProdComponent
 	],
-	imports: [CommonModule, RouterModule.forChild(AdminRoutes), FormsModule, ReactiveFormsModule],
-	exports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule]
+	imports: [CommonModule, RouterModule.forChild(AdminRoutes), FormsModule, ReactiveFormsModule, MaterialModule],
+	exports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, MaterialModule]
 })
 export class AdminsModule {}
