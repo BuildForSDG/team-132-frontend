@@ -26,13 +26,13 @@ img {
 }
 
 .crop {
-	overflow: hidden;
-  }
+  overflow: hidden;
+}
 
 .div {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .fa-star {
-	color: rgb(36, 3, 97);
+  color: rgb(36, 3, 97);
 }

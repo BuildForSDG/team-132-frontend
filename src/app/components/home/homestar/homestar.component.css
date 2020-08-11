@@ -1,11 +1,11 @@
 .crop {
-	overflow: hidden;
-  }
+  overflow: hidden;
+}
 
-  div {
-	cursor: pointer;
-  }
+div {
+  cursor: pointer;
+}
 
-  .fa-star {
-	color: rgb(36, 3, 97);
+.fa-star {
+  color: rgb(36, 3, 97);
 }

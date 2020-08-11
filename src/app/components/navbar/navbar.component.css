@@ -1,8 +1,10 @@
 li > a:hover {
   cursor: pointer;
 }
+
 .navbar-light .navbar-nav .nav-link.active {
-	color: rgb(46, 61, 194); font-weight: bold;
+  color: rgb(46, 61, 194);
+  font-weight: bold;
 }
 
 .nav-link {
