@@ -1,12 +1,12 @@
+/* eslint-disable no-undef */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './angular-material/material/material.module';
-import { StarComponent } from './components/products/star/star.component';
 import { HomestarComponent } from './components/home/homestar/homestar.component';
 import { ProductResolverService } from './components/products/product.resolver.service';
+import { HomeComponent } from './components/home/home.component';
 // import { ProductsModule } from './components/products/product.module';
 // import { ConfirmedEqualValidatorDirective } from './components/users/signup/clients-signup/confirmed.directive';
 
