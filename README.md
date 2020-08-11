@@ -66,3 +66,10 @@ It's powerful to always give credit.
 ## LICENSE
 
 MIT
+
+## Version
+1.0.0
+
+## Installation
+
+Install the dependencies 1. npm install 2. Run app 3. npm start

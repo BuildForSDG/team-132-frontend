@@ -2,22 +2,33 @@
   padding-top: 13vh;
 }
 
-.submain {
-  background-image: url('~src/assets/images/mt-1021-gallery-img05-bg.jpg');
+.submain,
+#slider4,
+.carousel-inner,
+.carousel-item {
+  /* background-image: url('~src/assets/images/mt-1021-gallery-img05-bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
   margin-top: 0;
-  height: 70vh;
+  height: 87vh;
   padding-top: 0;
 }
 
-#submain-child {
-  background-color: #fff;
-  opacity: 0.9;
+#submain-child,
+#submain-child2,
+#submain-child3,
+#submain-child4,
+#submain-child5 {
+  opacity: 0.8;
+  border-radius: 2rem;
+}
+
+.display-1 {
+  font-size: 2.5rem;
 }
 
 .head {
@@ -72,6 +83,10 @@
   border-top: 20px solid #fff;
 }
 
+.amos {
+  border-radius: 15px;
+}
+
 .h-brand {
   font-size: 3em;
 }
@@ -82,29 +97,57 @@
   border-color: green;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 575px) {
   img {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 250px;
     border-radius: 21px 21px 0;
   }
 
   .child {
     width: 90%;
-    min-height: 300px;
     border-radius: 21px 21px 0;
+  }
+
+  #display,
+  #display1,
+  #display2,
+  #display3,
+  #display4 {
+    display: inline-block;
+    padding-bottom: 10vh;
+    z-index: 0;
+  }
+
+  .display-1 {
+    font-size: 2rem;
+  }
+
+  #paras,
+  #paras1,
+  #paras2,
+  #paras3,
+  #paras4 {
+    display: none;
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 576px) {
   img {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 300px;
     border-radius: 21px 21px 0;
+  }
+
+  #display,
+  #display1,
+  #display2,
+  #display3,
+  #display4 {
+    z-index: 0;
   }
 
   .child {

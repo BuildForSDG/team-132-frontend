@@ -1,6 +1,6 @@
 .main {
-  padding-top: 10vh;
-  height: 100vh;
+  padding-top: 13vh;
+  min-height: 100vh;
 }
 
 input {
@@ -44,4 +44,8 @@ form {
 #btn-two {
   color: green;
   background-color: #fff;
+}
+
+#log {
+  cursor: pointer;
 }

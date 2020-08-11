@@ -1,13 +1,24 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable dot-notation */
+/* eslint-disable no-underscore-dangle */
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ProductsService } from 'src/app/services/products.service';
+import { Router, ActivatedRoute } from '@angular/router';
 // eslint-disable-next-line import/no-unresolved
 import { Iproduct } from 'src/app/iproduct';
+import { trigger, state, transition, animate, style } from '@angular/animations';
 
 @Component({
 	selector: 'app-product-list',
 	templateUrl: './product-list.component.html',
-	styleUrls: ['./product-list.component.css']
+	styleUrls: ['./product-list.component.css'],
+	animations: [
+		trigger('fade', [
+			transition('void => *', [
+				style({ backgroundColor: 'eee', opacity: 0 }),
+				animate(5000, style({ backgroundColor: 'fff', opacity: 1 }))
+			])
+		])
+	]
 })
 export class ProductListComponent implements OnInit {
 	products: Iproduct[];
@@ -26,31 +37,30 @@ export class ProductListComponent implements OnInit {
 		this.filteredArr = this.listfilter ? this.performFilter(this.listfilter) : this.products;
 	}
 
-	constructor(private productService: ProductsService, private router: Router) {
+	constructor(private router: Router, private route: ActivatedRoute) {
 		this.listfilter = '';
 	}
 
-	ngOnInit() {
-		this.productService.getProducts().subscribe({
+	ngOnInit(): void {
+		this.route.data.subscribe({
+			next: (data) => {
+				// tslint:disable-next-line: no-string-literal
+				this.products = data['products'];
+				this.filteredArr = this.products;
+			}
+		});
+
+		/* this.productService.getProducts().subscribe({
 			next: (products) => {
 				this.products = products;
 				this.filteredArr = this.products;
 			}
-		});
+		}); */
 	}
 
 	private performFilter(value: string): Iproduct[] {
 		// eslint-disable-next-line no-param-reassign
 		value = value.toLocaleLowerCase();
 		return this.products.filter((x: Iproduct) => x.name.toLocaleLowerCase().indexOf(value) !== -1);
-	}
-
-	// eslint-disable-next-line @typescript-eslint/member-ordering
-	OnRouting(id) {
-		this.productService.getProduct(+id).subscribe({
-			next: (x) => {
-				this.router.navigate([`/products/${id}`]);
-			}
-		});
 	}
 }

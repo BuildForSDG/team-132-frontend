@@ -1,10 +1,11 @@
 <div class="main container bg-light">
 	<br>
-	<div class="text-center">
+	<div class="text-center animate__animated animate__bounceInRight">
 		<h1 style="color: green;">goOrganic</h1>
-		<p class="lead" style="margin-bottom: 20px;">Please Sign in here...</p>
+		<p class="lead mb-2">Please Login here...</p>
+		<p class="text-success mb-2 font-weight-bold">Farmes's Point</p>
 	</div>
-	<div class="sub-main">
+	<div class="sub-main row justify-content-center">
 	  <br>
 	  <br>
 	  <div class="col-md-6">
@@ -53,6 +54,8 @@
 			</span>
 			<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
 
+			<p class="text-light mt-3 font-weight-bold">Dont have an account? please
+				<span routerLink='/user/farmer-signup' class="text-danger" id="log"> REGISTER</span></p>
         </form>
        <br><br>
      </div>

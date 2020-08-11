@@ -1,16 +1,17 @@
 <div class="main container bg-light">
 	<br>
-	<div class="text-center">
+	<div class="text-center animate__animated animate__bounceInRight">
 		<h1 style="color: green;">goOrganic</h1>
-		<p class="lead" style="margin-bottom: 20px;">Please Register here...</p>
+		<p class="lead mb-2">Please Register Here...</p>
+		<p class="text-success mb-2 font-weight-bold">Buyer's Point</p>
 	</div>
-	<div class="sub-main">
+	<div class="sub-main row justify-content-center">
 	  <br>
 	  <br>
 	  <div class="col-md-6">
 		<form autocomplete="off" novalidate #signUpForm="ngForm"  (ngSubmit)="save(signUpForm)">
 
-		 <div class="form-group"
+		 <div class="form-group mt-3"
 			[ngClass] = "{'error': fname.invalid && (fname.touched || fname.dirty || mouseOver)}"
 		 >
 				<label for="fname">Firstname *</label>
@@ -144,6 +145,8 @@
 			</span>
 			<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
 
+			<p class="text-light mt-3 font-weight-bold">Have an account? please
+				<span routerLink='/user/client-signin' class="text-danger" id="log"> LOGIN</span></p>
         </form>
        <br><br>
      </div>

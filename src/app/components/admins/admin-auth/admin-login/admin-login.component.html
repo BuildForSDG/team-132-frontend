@@ -1,123 +1,63 @@
-<div class="fluid-container main">
-	<div class="sidebar-container">
-		<div class="sidebar-logo bg-success" >
-		  goOrganic
-		</div>
-		<ul class="sidebar-navigation">
-		  <li class="header">Admin Panel</li>
-		  <li>
-			<a (click)="homeF()">
-			  <i class="fa fa-home" aria-hidden="true"></i> AdminHome
-			</a>
-		  </li>
-		  <li>
-			<a (click)="profileF()">
-			  <i class="fa fa-tachometer" aria-hidden="true"></i> Profile
-			</a>
-		  </li>
-		  <li>
-			<a  (click)="login()">
-			  <i class="fa fa-tachometer" aria-hidden="true"></i> Login
-			</a>
-		  </li>
-		  <li>
-			<a (click)="register()">
-			  <i class="fa fa-tachometer" aria-hidden="true"></i> Register
-			</a>
-		  </li>
-		  <li>
-			<a href="#">
-			  <i class="fa fa-tachometer" aria-hidden="true"></i> Logout
-			</a>
-		  </li>
-		  <li class="header">Another Menu</li>
-		  <li>
-			<a (click)="agroCompF()">
-			  <i class="fa fa-users" aria-hidden="true"></i> Agro-Companies
-			</a>
-		  </li>
-		  <li>
-			<a (click)="insuranceF()">
-			  <i class="fa fa-cog" aria-hidden="true"></i> Insurance
-			</a>
-		  </li>
-		  <li>
-			<a (click)="farmersF()" >
-			  <i class="fa fa-cog" aria-hidden="true"></i> Farmers
-			</a>
-		  </li>
-		  <li>
-			<a href="#">
-			  <i class="fa fa-info-circle" aria-hidden="true"></i> Information
-			</a>
-		  </li>
-		</ul>
-	  </div>
+S<div class="main container bg-light">
+	<br>
+	<div class="text-center">
+		<h1 style="color: green;">goOrganic</h1>
+		<p class="lead" style="margin-bottom: 20px;">Please Sign in here...</p>
+	</div>
+	<div class="sub-main">
+	  <br>
+	  <br>
+	  <div class="col-md-6">
+		<form autocomplete="off" novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
 
-	  <div class="content-container">
-
-		<div class="container-fluid">
-
-		  <!-- Main component for a primary marketing message or call to action -->
-		  <div class="text-center">
-			<h1 style="color: green;">goOrganic</h1>
-			<p class="lead" style="margin-bottom: 20px;">Please sign in here...</p>
-		</div>
-		<div class="sub-main">
-		  <br>
-		  <br>
-		  <div class="col-md-6">
-			<form autocomplete="off" novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
-
-				<div class="form-group"
-					[ngClass] = "{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}"
+			<div class="form-group"
+				[ngClass] = "{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}"
+			>
+				<label for="username">Username:</label>
+				<input
+				type="text"
+					ngModel
+					name="username"
+					#usern = "ngModel"
+					placeholder=" Username..."
+					class="form-control"
+					required
+					pattern = "[a-zA-Z].*"
 				>
-					<label for="username">Username:</label>
-					<input
-					type="text"
-						ngModel
-						name="username"
-						#usern = "ngModel"
-						placeholder=" Adminname..."
-						class="form-control"
-						required
-						pattern = "[a-zA-Z].*"
-					>
-					<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
-						<em *ngIf="usern.errors.required">admin name is required.</em>
-						<em *ngIf="usern.errors.pattern">admuin name must  with a letter.</em>
-					</div>
+				<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
+					<em *ngIf="usern.errors.required">username is required.</em>
+					<em *ngIf="usern.errors.pattern">username must  with a letter.</em>
 				</div>
+            </div>
 
-				<div class="form-group"
-					 [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
+			<div class="form-group"
+			     [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
+			>
+				<label for="password">Password:</label>
+				<input
+					type="password"
+					ngModel
+					name="password"
+					#pass = "ngModel"
+					class="form-control"
+					placeholder=" Password..."
+					required
 				>
-					<label for="password">Password:</label>
-					<input
-						type="password"
-						ngModel
-						name="password"
-						#pass = "ngModel"
-						class="form-control"
-						placeholder=" Password..."
-						required
-					>
-					<div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
-						<em *ngIf="pass.errors.required">password is required.</em>
-					</div>
+				<div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
+					<em *ngIf="pass.errors.required">password is required.</em>
 				</div>
+            </div>
 
-				<span (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
-				<button type="submit" class="btn btn-outline-secondary " id="btn-one" [disabled]="loginForm.invalid || loginForm.invalid">Save</button>
-				</span>
-				<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
+			<span (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+			<button type="submit" class="btn btn-outline-secondary" id="btn-one" [disabled]="loginForm.invalid || loginForm.invalid">Save</button>
+			</span>
+			<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
 
-			</form>
-		   <br><br>
-		 </div>
-	   </div>
-
-		</div>
-	  </div>
+			<p class="text-light mt-3 font-weight-bold">Dont have an account? please
+				<span routerLink='/admin/adminregister' class="text-danger" id="log"> REGISTER</span></p>
+        </form>
+       <br><br>
+     </div>
+   </div>
 </div>
 

@@ -24,3 +24,15 @@ img {
   height: 6vh;
   padding-top: 2px;
 }
+
+.crop {
+  overflow: hidden;
+}
+
+.div {
+  cursor: pointer;
+}
+
+.fa-star {
+  color: rgb(36, 3, 97);
+}

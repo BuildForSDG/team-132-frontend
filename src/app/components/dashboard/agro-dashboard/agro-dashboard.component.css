@@ -1,0 +1,20 @@
+.main {
+  padding-top: 20vh;
+  background-color: #fff;
+}
+
+h2,
+h3 {
+  color: green;
+}
+
+#matCard {
+  min-height: 80vh;
+  background-color: rgb(240, 247, 240);
+}
+
+.matexpansionpanelheader {
+  font-weight: 100;
+  font-size: 1em;
+  color: rgb(39, 9, 63);
+}
