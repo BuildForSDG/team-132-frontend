@@ -19,9 +19,9 @@
 
 				<div class="carousel-caption d-block d-sm-block" id="display">
                    <div class="pb-2 bg-success" id="submain-child">
-					<h1 class="display-1 text-white pt-3" >Welcome To</h1>
-					<h1 class="pb-3">goOrganic</h1>
-					<p class="font-weight-normal pb-5 text-justify w-75 mx-auto" id="paras">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus perspiciatis sunt fugiat culpa laborum labore fuga. Alias soluta sint distinctio voluptate fugiat, labore ducimus, eveniet non rerum fuga facilis voluptates. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quasi fuga aperiam cum incidunt, earum debitis voluptate architecto tempore nobis.</p>
+					<h1 class="display-1 text-white pt-3 animate__animated animate__bounceInRight" >Welcome To</h1>
+					<h1 class="pb-3 animate__animated animate__bounceInRight">goOrganic</h1>
+					<p class="font-weight-normal pb-5 text-justify w-75 mx-auto animate__animated animate__fadeIn" id="paras">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus perspiciatis sunt fugiat culpa laborum labore fuga. Alias soluta sint distinctio voluptate fugiat, labore ducimus, eveniet non rerum fuga facilis voluptates. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quasi fuga aperiam cum incidunt, earum debitis voluptate architecto tempore nobis.</p>
 				   </div>
 				</div>
 
@@ -108,7 +108,7 @@
 						  <p class="mt-2 pt-2 text-left ml-2 mb-1">
 							{{productOne?.price | currency:"ksh ": "symbol": "1.2-2"}}
 						  </p>
-						  <app-star [rating]="productOne?.starRating"></app-star>
+						  <app-homestar [rating]="productOne?.starRating"></app-homestar>
 						  <p class="text-left ml-2 mb-1">
 							Serial: {{productOne?.productCode}}
 						  </p>
@@ -132,7 +132,7 @@
 							<p class="mt-2 pt-2 text-left ml-2 mb-1">
 								{{productTwo?.price | currency:"ksh ": "symbol": "1.2-2"}}
 							  </p>
-							  <app-star [rating]="productTwo?.starRating"></app-star>
+							  <app-homestar [rating]="productTwo?.starRating"></app-homestar>
 							  <p class="text-left ml-2 mb-1">
 								Serial: {{productTwo?.productCode}}
 							  </p>

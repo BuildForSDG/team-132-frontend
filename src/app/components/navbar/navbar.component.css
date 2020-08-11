@@ -1,14 +1,12 @@
 li > a:hover {
   cursor: pointer;
 }
+.navbar-light .navbar-nav .nav-link.active {
+	color: rgb(46, 61, 194); font-weight: bold;
+}
 
 .nav-link {
   color: green;
-}
-
-li > a:active {
-  border: 2px solid green;
-  border-radius: 5px;
 }
 
 .h-brand {

@@ -9,3 +9,8 @@ export interface Iproduct {
 	releaseDate: string;
 	imageUrl: string;
 }
+
+export interface IproductResolved {
+	product: Iproduct;
+	error?: any;
+}

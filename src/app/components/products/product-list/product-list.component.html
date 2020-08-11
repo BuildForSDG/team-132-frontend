@@ -1,10 +1,20 @@
 <div class="container main">
-	<h2 class="text-white bg-success py-2 pl-2 font-weight-bold">Our Top Products</h2>
+	<h2 class="text-white bg-success py-2 pl-2 font-weight-bold animate__animated animate__bounceInRight">Our Top Products</h2>
 	<hr>
 	<div class="row container">
-	  <span><input type="text" class="form-control" [(ngModel)]="listfilter" placeholder="search..."></span>
-	  <span><i class="fa fa-search"></i></span>
+    <div class="col-sm-8 col-md-5">
+			<div class="input-group">
+				<input type="text" class="form-control" [(ngModel)]="listfilter" placeholder="search...">
+				<div class="input-group-append">
+						<span class="input-group-text"><i class="fa fa-search"></i></span>
+				</div>
+			</div>
+		</div>
 	</div>
 	<br>
-	<app-product-thumbnail [products]="filteredArr" (onRoute)="OnRouting($event)"></app-product-thumbnail>
-  </div>
+    <div class="row mx-2 p-3 d-flex justify-content-center" >
+		<div @fade *ngFor="let product of  filteredArr" class="col-sm-5 col-md-4 ">
+			<app-product-thumbnail [product]="product"></app-product-thumbnail>
+		</div>
+	</div>
+</div>

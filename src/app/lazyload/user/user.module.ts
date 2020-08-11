@@ -20,6 +20,8 @@ import { ConfirmedEqualValidatorDirective } from 'src/app/components/users/signu
 import { AgrologinComponent } from 'src/app/components/users/agrologin/agrologin.component';
 // eslint-disable-next-line import/no-unresolved
 import { AgrosignupComponent } from 'src/app/components/users/agrosignup/agrosignup.component';
+// eslint-disable-next-line import/no-unresolved
+import { MaterialModule } from 'src/app/angular-material/material/material.module';
 
 /*
  All user components are lazily loaded into the site.
@@ -43,7 +45,7 @@ const routes: Routes = [
 		AgrosignupComponent,
 		ConfirmedEqualValidatorDirective
 	],
-	imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule],
+	imports: [CommonModule, RouterModule.forChild(routes), MaterialModule, FormsModule, ReactiveFormsModule],
 	exports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class UserModule {}

@@ -8,10 +8,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/users/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { ProductsModule } from './components/products/product.module';
+import { AdminsModule } from './components/admins/admins/admins.module';
+import { UserModule } from './lazyload/user/user.module';
+import { InfoModule } from './components/information/info/info.module';
+import { DashboardModule } from './components/dashboard/dashboard/dashboard.module';
+import { MaterialModule } from './angular-material/material/material.module';
+import { AgroCompaniesModule } from './components/agro-companies/agro.module';
 @NgModule({
 	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent],
-	imports: [BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		MaterialModule,
+		InfoModule,
+		AgroCompaniesModule,
+		AdminsModule,
+		UserModule,
+		DashboardModule,
+		ProductsModule,
+		AppRoutingModule,
+		BrowserAnimationsModule
+	],
 	providers: [],
 	bootstrap: [AppComponent]
 })
