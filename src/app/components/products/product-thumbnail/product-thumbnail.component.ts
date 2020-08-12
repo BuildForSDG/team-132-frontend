@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import { Component, Input } from '@angular/core';
 // eslint-disable-next-line import/no-unresolved
 import { Iproduct } from 'src/app/iproduct';
 
@@ -7,18 +8,17 @@ import { Iproduct } from 'src/app/iproduct';
 	templateUrl: './product-thumbnail.component.html',
 	styleUrls: ['./product-thumbnail.component.css']
 })
-export class ProductThumbnailComponent implements OnInit {
-	@Input() products: Iproduct[];
+export class ProductThumbnailComponent {
+	@Input() product: Iproduct;
 
-	// tslint:disable-next-line: no-output-on-prefix
-	@Output() onRoute = new EventEmitter();
+	rating;
 
-	// eslint-disable-next-line @typescript-eslint/no-useless-constructor
-	constructor() {}
+	starWidth: number;
 
-	ngOnInit() {}
-
-	route(id) {
-		this.onRoute.emit(id);
+	ngOnChanges(): void {
+		if (this.product) {
+			this.rating = this.product.productCode;
+			this.starWidth = this.rating * (75 / 5);
+		}
 	}
 }

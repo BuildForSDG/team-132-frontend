@@ -1,0 +1,73 @@
+<div class="container-fluid main">
+	<mat-card id="matCard">
+		<div>
+			<div>
+        <div>
+		  <p style="text-align: right;" class="clearfix mb-3">
+			<button class="btn btn-success float-left">Agro-Company</button>
+			<button class="btn btn-success float-right">welcome amosmoyo</button>
+		</p>
+		  <h3 class="font-weight-bold">PROFILE INFORMATION</h3>
+		  <button class="btn btn-dark text-light">Edit</button>
+        </div>
+        <br>
+        <div class="row">
+					<div class="col-md-3">
+						<button class="btn btn-outline-success btn-block">ID:qiGlmy7Q</button>
+					</div>
+					<div class="col-md-3">
+						<button class="btn btn-outline-success btn-block">Name: Amos Moyo</button>
+					</div>
+					<div class="col-md-3">
+                    <button class="btn btn-outline-success btn-block">amosmoyo</button>
+          </div>
+        </div>
+        <div>
+        </div>
+
+      </div>
+			<div>
+        <br>
+				<h2>Dashboard Details.</h2>
+				<br>
+				<div>
+					<mat-accordion>
+						<mat-expansion-panel (opened)="panelOpenState = true"
+											 (closed)="panelOpenState = false" class="bg-success">
+						  <mat-expansion-panel-header>
+							<mat-panel-title class="text-white">
+							  Decorator
+							</mat-panel-title>
+							<mat-panel-description class="text-white" >
+							  The panel {{panelOpenState ? 'open' : 'closed'}}
+							</mat-panel-description>
+						  </mat-expansion-panel-header>
+						</mat-expansion-panel>
+					  </mat-accordion>
+				</div>
+				<br><br>
+				<div>
+					<mat-accordion >
+						<mat-expansion-panel (opened)="panelOpenState = true"
+											 (closed)="panelOpenState = false" class="payments">
+						  <mat-expansion-panel-header class="matexpansionpanelheader">
+							<mat-panel-title class="text-success">
+							  Success Pay
+							</mat-panel-title>
+							<mat-panel-description class="text-success">
+							  The panel {{panelOpenState ? 'open' : 'closed'}}
+							</mat-panel-description>
+						  </mat-expansion-panel-header>
+						  <div>
+                <p>Payment ID: 111</p>
+                <p>Amount Charge: 10, 000</p>
+                <p>Date:</p>
+              </div>
+						</mat-expansion-panel>
+            </mat-accordion>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+	<br>
+</div>

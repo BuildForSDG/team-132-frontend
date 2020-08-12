@@ -53,7 +53,11 @@ export class EditProductsComponent implements OnInit {
 		return this.post.get('rating');
 	}
 
-	save() {}
+	save() {
+		console.log(`w`);
+	}
 
-	cancel() {}
+	cancel() {
+		console.log(2);
+	}
 }

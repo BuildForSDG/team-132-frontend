@@ -1,32 +1,34 @@
 <div class="main container bg-light">
 	<br>
-	<div class="text-center">
+	<div class="text-center animate__animated animate__bounceInRight">
+		<span class="d-block"><i class="fa fa-user"></i></span>
 		<h1 style="color: green;">goOrganic</h1>
-		<p class="lead" style="margin-bottom: 20px;">Please sign in here...</p>
+		<p class="lead mb-2">Please Login Here...</p>
+		<p class="text-success mb-2 font-weight-bold">Buyer's Point</p>
 	</div>
-	<div class="sub-main">
+	<div class="sub-main row justify-content-center">
 	  <br>
 	  <br>
 	  <div class="col-md-6">
 		<form autocomplete="off" novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
 
 			<div class="form-group"
-				[ngClass] = "{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}"
+				[ngClass] = "{'error': email.invalid && (email.touched || email.dirty || mouseOver)}"
 			>
-				<label for="username">Username:</label>
+				<label for="email">Email:</label>
 				<input
 				type="text"
 					ngModel
-					name="username"
-					#usern = "ngModel"
-					placeholder=" Username..."
+					name="email"
+					#email = "ngModel"
+					placeholder="E-mail..."
 					class="form-control"
 					required
-					pattern = "[a-zA-Z].*"
+					email
 				>
-				<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
-					<em *ngIf="usern.errors.required">username is required.</em>
-					<em *ngIf="usern.errors.pattern">username must  with a letter.</em>
+				<div *ngIf="email.invalid && (email.touched || email.dirty || mouseOver)">
+					<em *ngIf="email.errors.required">email is required.</em>
+					<em *ngIf="email.errors.email">enter a valid email</em>
 				</div>
             </div>
 
@@ -48,13 +50,19 @@
 				</div>
             </div>
 
-			<span (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
-			<button type="submit" class="btn btn-outline-secondary " id="btn-one" [disabled]="loginForm.invalid || loginForm.invalid">Save</button>
-			</span>
-			<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
+            <div>
+				<br>
+				<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+					<button  type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white" [disabled]="loginForm.invalid || loginForm.invalid" style="width: 100%;">Save</button>
+				</span>
+				<button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
+			</div>
 
+			<p class="text-success mt-2 font-weight-bold">Dont have an account? please
+				<span routerLink='/user/client-signup' class="text-danger" id="log"> REGISTER</span>
+			</p>
         </form>
-       <br><br>
+       <br>
      </div>
    </div>
 </div>

@@ -14,7 +14,7 @@ export class ProductsService {
 	getProducts(): Observable<Iproduct[]> {
 		return this.http.get<Iproduct[]>(URL).pipe(
 			map((x) => x),
-			catchError(this.handleError)
+			catchError(err => this.handleError(err))
 		);
 	}
 
@@ -22,7 +22,8 @@ export class ProductsService {
 		return this.getProducts().pipe(
 			map((products: Iproduct[]) => {
 				return products.find((x) => x.productId === id);
-			})
+			}),
+			catchError(err => this.handleError(err))
 		);
 	}
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+// eslint-disable-next-line import/no-unresolved
 
 @Component({
 	selector: 'app-clints',
@@ -21,6 +22,11 @@ export class ClintsComponent implements OnInit {
 		}
 
 		console.log(form.value);
+		const obj = {
+			username: form.value.username,
+			password: form.value.password
+		};
+		this.router.navigate(['/dashboard/buyer-dashboard']);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type

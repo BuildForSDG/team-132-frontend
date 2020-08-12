@@ -13,11 +13,18 @@
   overflow-y: auto;
   background: #1a1a1a;
   color: #fff;
+  z-index: 10;
+}
+
+.content-container {
+  padding-top: 20px;
+  padding-left: 220px;
 }
 
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
   font-size: 20px;
+  background-color: green;
 }
 
 .sidebar-navigation {
@@ -78,10 +85,4 @@
 
 .sidebar-navigation .header::before {
   background-color: transparent;
-}
-
-.content-container {
-  padding-top: 20px;
-  padding-left: 220px;
-  overflow-y: hidden;
 }

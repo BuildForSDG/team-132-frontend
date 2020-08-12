@@ -1,6 +1,6 @@
 .main {
-  padding-top: 10vh;
-  height: 100vh;
+  padding-top: 13vh;
+  min-height: 100vh;
 }
 
 input {
@@ -11,7 +11,7 @@ input {
 }
 
 label {
-  color: green;
+  color: #28a745;
   font-weight: 900;
 }
 
@@ -27,21 +27,23 @@ em {
 
 .sub-main {
   border-radius: 10px;
-  border: 0.5px solid green;
-  background-color: green;
+  border: 0 solid #28a745;
 }
 
 form {
   margin-bottom: 20px;
+  background-color: #fff;
+  height: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  border: 0.5px solid #28a745;
 }
 
-#btn-one {
-  color: green;
-  background-color: #fff;
-  margin-right: 10px;
+#log {
+  cursor: pointer;
 }
 
-#btn-two {
-  color: green;
-  background-color: #fff;
+.fa {
+  font-size: 1.2rem;
+  color: #450f5a;
 }

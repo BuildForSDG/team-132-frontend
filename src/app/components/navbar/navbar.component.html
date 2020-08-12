@@ -1,31 +1,111 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" id="navbar">
-	<a class="navbar-brand text-success" href="javascript:void()">goOrganic</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-	  <span class="navbar-toggler-icon"></span>
-	</button>
+	<div class="container">
+		<a class="navbar-brand text-success" href="javascript:void()">
+			goOrganic
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+			aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-	  <ul class="navbar-nav mr-auto">
-			<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-			<a class="nav-link text-success" [routerLink]="['/']" >Home <span></span></a>
-			</li>
-			<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-				<a class="nav-link text-success" [routerLink]="['/products']" >Products<span></span></a>
-			</li>
-	  </ul>
-	  <ul class="navbar-nav ml-auto">
-		<li class="nav-item"  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-		  <a class="nav-link text-success" >Dashboard </a>
-		</li>
-		<li class="nav-item"  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-		  <a class="nav-link text-success" >Profile </a>
-		</li>
-		<li class="nav-item"  [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-		  <a class="nav-link text-success" [routerLink]="['/user/signin-form']" >Login </a>
-		</li>
-		<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-		  <a class="nav-link text-success" [routerLink]="['/user/signup-form']" >Register</a>
-		</li>
-	  </ul>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link text-success" [routerLink]="['/']" routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}">Home <span></span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-success" [routerLink]="['/services/products']" routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}">Products<span></span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-success" [routerLink]="['/about']" routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}">About Us<span></span></a>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link text-success">Dashboard </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link text-success">Logout</a>
+				</li>
+
+				<li class="nav-item">
+					<a [routerLink]="['/user/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+						class="nav-link text-success">Login</a>
+				</li>
+
+				<li class="nav-item">
+					<a [routerLink]="['/user/signup']" routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}" class="nav-link text-success">Register</a>
+				</li>
+
+			</ul>
+		</div>
 	</div>
-  </nav>
+</nav>
+
+<!--
+			<a class="navbar-brand text-success" href="javascript:void()">goOrganic</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+			aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link text-success" [routerLink]="['/']" routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}">Home <span></span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-success" [routerLink]="['/services/products']" routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}">Products<span></span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-success" [routerLink]="['/home/about']" routerLinkActive="active"
+						[routerLinkActiveOptions]="{exact:true}">About Us<span></span></a>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<a *ngIf="buyer.isAuth() || agro.isAuth() || farmer.isAuth()"
+						class="nav-link text-success">Dashboard </a>
+				</li>
+
+				<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<a *ngIf="buyer.isAuth() || agro.isAuth() || farmer.isAuth()" class="nav-link text-success"
+						(click)="buyer.logout()">Logout</a>
+				</li>
+
+				<li *ngIf="!buyer.isAuth() && !agro.isAuth() && !farmer.isAuth()" class="nav-item dropdown"
+					[routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<a class="nav-link text-success dropdown-toggle" data-toggle="dropdown">Login </a>
+					<div class="dropdown-menu dropdown-menu-right py-0">
+						<a class="dropdown-item my-0 pt-2" routerLink='/user/client-signin'>Buyer</a>
+						<div class="dropdown-divider my-0 border"></div>
+						<a class="dropdown-item mr-2 my-0 py-2" routerLink='/user/farmer-signin'>Farmer</a>
+						<div class="dropdown-divider my-0 border"></div>
+						<a class="dropdown-item mr-2 my-0 py-2" routerLink='/user/agro-login'>Agro-Company Agent</a>
+					</div>
+				</li>
+
+				<li *ngIf="!buyer.isAuth() && !agro.isAuth() && !farmer.isAuth()" class="nav-item dropdown"
+					[routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+					<a class="nav-link text-success dropdown-toggle mb-1" data-toggle="dropdown">Register</a>
+					<div class="dropdown-menu dropdown-menu-right py-0">
+						<a class="dropdown-item my-0 pt-2" routerLink='/user/client-signup'>Buyer</a>
+						<div class="dropdown-divider my-0 border"></div>
+						<a class="dropdown-item mr-2 my-0 py-2" routerLink='/user/farmer-signup'>Farmer</a>
+						<div class="dropdown-divider my-0 border"></div>
+						<a class="dropdown-item mr-2 my-0 py-2" routerLink='/user/agro-signup'>Agro-Company Agent</a>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+-->

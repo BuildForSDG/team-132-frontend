@@ -1,5 +1,14 @@
-li a:active {
-  color: rgb(250, 85, 8);
+li > a:hover {
+  cursor: pointer;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgb(46, 61, 194);
+  font-weight: bold;
+}
+
+.nav-link {
+  color: green;
 }
 
 .h-brand {
@@ -12,4 +21,14 @@ li a:active {
   z-index: 1;
   box-shadow: 0 0.2px 0 0.6px #999;
   color: green;
+}
+
+.dropdown-item {
+  color: green;
+  background-color: #eee;
+}
+
+.dropdown-item:hover {
+  background-color: green;
+  color: #fff;
 }

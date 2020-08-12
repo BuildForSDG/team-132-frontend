@@ -21,38 +21,11 @@ export class AdminRegisterComponent implements OnInit {
 		}
 
 		console.log(form.value);
+		this.router.navigate(['/admin/adminlogin']);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	cancel() {
 		this.router.navigate(['/']);
-	}
-
-	login() {
-		this.router.navigate(['/admin/adminlogin']);
-	}
-
-	register() {
-		this.router.navigate(['/admin/adminregister']);
-	}
-
-	homeF() {
-		this.router.navigate(['/admin/main']);
-	}
-
-	profileF() {
-		this.router.navigate(['/admin/adminprofile']);
-	}
-
-	agroCompF() {
-		this.router.navigate(['/admin/agrocompanies']);
-	}
-
-	insuranceF() {
-		this.router.navigate(['/admin/insurance']);
-	}
-
-	farmersF() {
-		this.router.navigate(['/admin/farmers']);
 	}
 }
