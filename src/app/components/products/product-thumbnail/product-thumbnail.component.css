@@ -38,7 +38,7 @@ img {
 }
 
 @media (max-width: 575px) {
-	img {
-		width: 80%;
-	}
+  img {
+    width: 80%;
+  }
 }
