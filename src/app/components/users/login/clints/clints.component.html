@@ -13,22 +13,22 @@
 		<form autocomplete="off" novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
 
 			<div class="form-group"
-				[ngClass] = "{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}"
+				[ngClass] = "{'error': email.invalid && (email.touched || email.dirty || mouseOver)}"
 			>
-				<label for="username">Username:</label>
+				<label for="email">Email:</label>
 				<input
 				type="text"
 					ngModel
-					name="username"
-					#usern = "ngModel"
-					placeholder=" Username..."
+					name="email"
+					#email = "ngModel"
+					placeholder="E-mail..."
 					class="form-control"
 					required
-					pattern = "[a-zA-Z].*"
+					email
 				>
-				<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
-					<em *ngIf="usern.errors.required">username is required.</em>
-					<em *ngIf="usern.errors.pattern">username must  with a letter.</em>
+				<div *ngIf="email.invalid && (email.touched || email.dirty || mouseOver)">
+					<em *ngIf="email.errors.required">email is required.</em>
+					<em *ngIf="email.errors.email">enter a valid email</em>
 				</div>
             </div>
 

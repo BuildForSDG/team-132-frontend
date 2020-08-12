@@ -3,157 +3,141 @@
 	<div class="text-center animate__animated animate__bounceInRight">
 		<span class="d-block"><i class="fa fa-user"></i></span>
 		<h1 style="color: green;">goOrganic</h1>
-		<p class="lead mb-2">Please Register Here...</p>
-		<p class="text-success mb-2 font-weight-bold">Buyer's Point</p>
+		<p class="lead mb-2">Please Register Here amos...</p>
+		<p class="text-success mb-2 font-weight-bold">User's Point</p>
 	</div>
 	<div class="sub-main row justify-content-center">
-	  <br>
-	  <br>
-	  <div class="col-md-6">
-		<form autocomplete="off" novalidate #signUpForm="ngForm"  (ngSubmit)="save(signUpForm)">
+		<br>
+		<br>
+		<div class="col-sm-6 col-md-8">
+			<form autocomplete="off" novalidate #signUpForm="ngForm" (ngSubmit)="save(signUpForm)">
 
-		 <div class="form-group mt-3"
-			[ngClass] = "{'error': fname.invalid && (fname.touched || fname.dirty || mouseOver)}"
-		 >
-				<label for="fname">Firstname *</label>
-				<input
-					type="text"
-					ngModel
-					name="fname"
-					#fname = "ngModel"
-					placeholder="Firstname..."
-					class="form-control"
-					class="form-control"
-					required
-					pattern = "[a-zA-Z].*"
-				>
-				<div *ngIf="fname.invalid && (fname.touched || fname.dirty || mouseOver)">
-					<em *ngIf="fname.errors.required">first-name is required.</em>
-					<em *ngIf="fname.errors.pattern">first-name must  with a letter.</em>
+				<div class="row justify-content-around mt-2">
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': fname.invalid && (fname.touched || fname.dirty || mouseOver)}">
+							<label for="fname">Firstname *</label>
+							<input type="text" ngModel name="firstname" #fname="ngModel" placeholder="Firstname..."
+								class="form-control" class="form-control" required pattern="[a-zA-Z].*">
+							<div *ngIf="fname.invalid && (fname.touched || fname.dirty || mouseOver)">
+								<em *ngIf="fname.errors.required">first-name is required.</em>
+								<em *ngIf="fname.errors.pattern">first-name must with a letter.</em>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': sname.invalid && (sname.touched || sname.dirty || mouseOver)}">
+							<label for="lname">Lastname *</label>
+							<input type="text" ngModel name="lastname" #sname="ngModel" placeholder="Lastnameame..." id="lname"
+								class="form-control" required pattern="[a-zA-Z].*">
+							<div *ngIf="sname.invalid && (sname.touched || sname.dirty || mouseOver)">
+								<em *ngIf="sname.errors.required">lastname name is required.</em>
+								<em *ngIf="sname.errors.pattern">lastname must with a letter.</em>
+							</div>
+						</div>
+					</div>
+
 				</div>
-		  </div>
 
-		  <div class="form-group"
-			  [ngClass] = "{'error': sname.invalid && (sname.touched || sname.dirty || mouseOver)}"
-		  >
-				<label for="username">Lastname *</label>
-				<input
-					type="text"
-					ngModel
-					name="sname"
-					#sname = "ngModel"
-					placeholder="Lastnameame..."
-					class="form-control"
-					required
-					pattern = "[a-zA-Z].*"
-				>
-				<div *ngIf="sname.invalid && (sname.touched || sname.dirty || mouseOver)">
-					<em *ngIf="sname.errors.required">lastname name is required.</em>
-					<em *ngIf="sname.errors.pattern">lastname must  with a letter.</em>
-				</div>
-			</div>
+				<div class="row justify-content-around mt-2">
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}">
+							<label for="usernum">Phone *</label>
+							<input type="number" ngModel name="phoneNumber" #usern="ngModel" placeholder=" 700000000"
+								class="form-control" id="username" required>
+							<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
+								<em *ngIf="usern.errors.required">user contacts required</em>
+							</div>
+						</div>
+					</div>
 
-			<div class="form-group"
-				[ngClass] = "{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}"
-			>
-					<label for="username">Username *</label>
-					<input
-						type="text"
-						ngModel
-						name="username"
-						#usern = "ngModel"
-						placeholder=" Username..."
-						class="form-control"
-						id="username"
-						required
-						pattern = "[a-zA-Z].*"
-					>
-					<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
-						<em *ngIf="usern.errors.required">username is required.</em>
-						<em *ngIf="usern.errors.pattern">username must  with a letter.</em>
+					<div class="col-md-5">
+						<div class="form-group" [ngClass]="{'error':useremail.invalid && (useremail.touched || useremail.dirty || mouseOver)}">
+							<label for='email'>Email *</label>
+							<input type="text" name="email" ngModel placeholder="E-mail..." required id="email"
+								class="form-control" email #useremail="ngModel">
+							<div *ngIf="useremail.invalid && (useremail.touched || useremail.dirty || mouseOver)">
+								<em *ngIf="useremail.errors.required">email is required.</em>
+								<em *ngIf="useremail.errors.pattern">username must with a letter.</em>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label for='email'>Email *</label>
-					<input
-						type="text"
-						name="email"
-						ngModel
-						placeholder="enter email"
-						required
-						id="email"
-						class="form-control"
-						email
-						#useremail="ngModel"
-					>
-					<div *ngIf="useremail.invalid && (useremail.touched || useremail.dirty || mouseOver)">
-						<em *ngIf="useremail.errors.required">email is required.</em>
-						<em *ngIf="useremail.errors.pattern">username must  with a letter.</em>
+				<div ngModelGroup="passwordGroup" #passwordGroup="ngModelGroup" [ngClass]="{'error':
+							   c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver) && !c_pass.errors.required}">
+					<div class="row justify-content-around">
+						<div class="col-md-5">
+							<div class="form-group"
+								[ngClass]="{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}">
+								<label for="password">Password *</label>
+								<input type="password" ngModel name="password" #pass="ngModel" class="form-control"
+									class="form-control" (input)="c_pass.control.updateValueAndValidity()" id="password"
+									placeholder=" Password..." required>
+								<div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
+									<em *ngIf="pass.errors.required">password is required.</em>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="form-group"
+								[ngClass]="{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}">
+								<label for="c_password">Confirm Password *</label>
+								<input type="password" ngModel name="c_password" #c_pass="ngModel"
+									appconfirmpassword="password" class="form-control" id="c_password"
+									placeholder=" Confirm password..." required>
+								<div *ngIf="c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver)">
+									<em *ngIf="c_pass.errors.required">Confirm password.</em>
+									<em *ngIf="c_pass.errors.notEqual && !c_pass.errors.required">password does not
+										match.</em>
+								</div>
+							</div>
+						</div>
+
 					</div>
+
 				</div>
 
-			<div ngModelGroup="passwordGroup"
-				 #passwordGroup="ngModelGroup"
-				 [ngClass] = "{'error':
-							   c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver) && !c_pass.errors.required}"
-		    >
-			   <div class="form-group"
-				   [ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
-			   >
-				   <label for="password">Password *</label>
-				   <input
-					   type="password"
-					   ngModel
-					   name="password"
-					   #pass = "ngModel"
-					   class="form-control"
-					   class="form-control"
-					   (input)="c_pass.control.updateValueAndValidity()"
-					   id="password"
-					   placeholder=" Password..."
-					   required
-				   >
-			   <div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
-				   <em *ngIf="pass.errors.required">password is required.</em>
-			   </div>
-		       </div>
+                <div class="row justify-content-start">
+                   <div class="col-md-6 ml-md-3">
+					<div class="form-group">
+						<div class="font-weight-bold text-success ml-3">Select Role *</div>
+						<label class="radio-inline mr-3 font-weight-normal" style="color: #111;">
+							<input type="radio" class="margin-left-2" value="customer" name="role" id="customer" ngModel
+								#role="ngModel" required>Customer</label>
+						<label class="radio-inline mr-3 font-weight-normal" style="color: #111;">
+							<input type="radio" value="farmer" name="role" id="farmer" ngModel #role="ngModel"
+								required>Farmer</label>
+						<label class="radio-inline font-weight-normal" style="color: #111;">
+							<input type="radio" value="agro-chemical-company" name="role" id="agro-chemical-company" ngModel
+								#role="ngModel" required>
+							Agro-Company</label>
 
-		   <div class="form-group"
-				[ngClass] = "{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}"
-		   >
-			  <label for="c_password">Confirm Password *</label>
-			  <input
-				  type="password"
-				  ngModel
-				  name="c_password"
-				  #c_pass = "ngModel"
-				  appconfirmpassword="password"
-				  class="form-control"
-				  id="c_password"
-				  placeholder=" Confirm password..."
-				  required
-			  >
-			  <div *ngIf="c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver)">
-				  <em *ngIf="c_pass.errors.required">Confirm password.</em>
-				  <em *ngIf="c_pass.errors.notEqual && !c_pass.errors.required">password does not match.</em>
-			  </div>
-			</div>
-		  </div>
+					</div>
+					<div *ngIf="role.invalid && (role.dirty || mouseOver)">
+						<em *ngIf="role.errors.required">Please specify role</em>
+					</div>
+				   </div>
+				</div>
 
-		  <div>
+
+				<div style="width: 75%; margin-left: auto; margin-right: auto;">
+					<br>
+					<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+						<button type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white"
+							[disabled]="signUpForm.invalid || signUpForm.invalid" style="width: 100%;">Save</button>
+					</span>
+					<button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
+
+					<p class="text-success my-2 font-weight-bold">Have an account? please
+						<span routerLink='/user/client-signin' class="text-danger" id="log"> LOGIN</span></p>
+				</div>
+			</form>
 			<br>
-			<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
-				<button  type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white" [disabled]="signUpForm.invalid || signUpForm.invalid" style="width: 100%;">Save</button>
-			</span>
-			<button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
-		  </div>
-
-		  <p class="text-success mt-2 font-weight-bold">Have an account? please
-			<span routerLink='/user/client-signin' class="text-danger" id="log"> LOGIN</span></p>
-        </form>
-       <br>
-     </div>
-   </div>
+		</div>
+	</div>
 </div>
-

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 // eslint-disable-next-line import/no-unresolved
-import { BuyersService } from 'src/app/services/buyers.service';
 
 @Component({
 	selector: 'app-clints',
@@ -12,7 +11,7 @@ import { BuyersService } from 'src/app/services/buyers.service';
 export class ClintsComponent implements OnInit {
 	mouseOver;
 
-	constructor(private router: Router, private buyer: BuyersService) {}
+	constructor(private router: Router) {}
 
 	ngOnInit() {}
 
@@ -27,9 +26,6 @@ export class ClintsComponent implements OnInit {
 			username: form.value.username,
 			password: form.value.password
 		};
-
-		this.buyer.login(obj);
-
 		this.router.navigate(['/dashboard/buyer-dashboard']);
 	}
 
