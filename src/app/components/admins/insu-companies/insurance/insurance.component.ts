@@ -22,36 +22,4 @@ export class InsuranceComponent implements OnInit {
 
 		this.companies = comp;
 	}
-
-	login() {
-		this.router.navigate(['/admin/adminlogin']);
-	}
-
-	register() {
-		this.router.navigate(['/admin/adminregister']);
-	}
-
-	homeF() {
-		this.router.navigate(['/admin/main']);
-	}
-
-	profileF() {
-		this.router.navigate(['/admin/adminprofile']);
-	}
-
-	agroCompF() {
-		this.router.navigate(['/admin/agrocompanies']);
-	}
-
-	insuranceF() {
-		this.router.navigate(['/admin/insurance']);
-	}
-
-	farmersF() {
-		this.router.navigate(['/admin/farmers']);
-	}
-
-	productsF() {
-		this.router.navigate(['/admin/products']);
-	}
 }

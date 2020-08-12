@@ -12,21 +12,30 @@ import { AdminLoginComponent } from '../admin-auth/admin-login/admin-login.compo
 import { AdminRegisterComponent } from '../admin-auth/admin-register/admin-register.component';
 import { AdminProfileComponent } from '../admin-auth/admin-profile/admin-profile.component';
 import { AdminProdComponent } from '../admin-prod/admin-prod.component';
+import { AdminpanelComponent } from '../adminpanel/adminpanel.component';
 
 // eslint-disable-next-line import/named
 const AdminRoutes: Routes = [
-	{ path: 'main', component: AdminHomeComponent },
-	{ path: 'adminlogin', component: AdminLoginComponent },
-	{ path: 'adminregister', component: AdminRegisterComponent },
-	{ path: 'adminprofile', component: AdminProfileComponent },
-	{ path: 'farmers', component: FarmersAdminComponent },
-	{ path: 'agrocompanies', component: AgroCompaniesComponent },
-	{ path: 'insurance', component: InsuranceComponent },
-	{ path: 'products', component: AdminProdComponent }
+	{
+		path: 'panel',
+		component: AdminHomeComponent,
+		children: [
+			{ path: 'home', component: AdminpanelComponent },
+			{ path: '', redirectTo: 'login', pathMatch: 'full' },
+			{ path: 'login', component: AdminLoginComponent },
+			{ path: 'signup', component: AdminRegisterComponent },
+			{ path: 'profile', component: AdminProfileComponent },
+			{ path: 'farmers', component: FarmersAdminComponent },
+			{ path: 'agrocompanies', component: AgroCompaniesComponent },
+			{ path: 'insurance', component: InsuranceComponent },
+			{ path: 'products', component: AdminProdComponent }
+		]
+	}
 ];
 
 @NgModule({
 	declarations: [
+		AdminpanelComponent,
 		AgroCompaniesComponent,
 		FarmersAdminComponent,
 		AdminHomeComponent,

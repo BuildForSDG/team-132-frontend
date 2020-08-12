@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// eslint-disable-next-line import/no-unresolved
 import { ProductsService } from 'src/app/services/products.service';
+// eslint-disable-next-line import/no-unresolved
 import { Iproduct } from 'src/app/iproduct';
 
 @Component({
@@ -21,7 +23,7 @@ export class AdminProdComponent implements OnInit {
 
 	constructor(private router: Router, private productService: ProductsService) {}
 
-	ngOnInit() {
+	ngOnInit(): void {
 		this.productService.getProducts().subscribe({
 			next: (products) => {
 				this.products = products;
@@ -31,29 +33,5 @@ export class AdminProdComponent implements OnInit {
 
 	toggleImage(): void {
 		this.showImage = !this.showImage;
-	  }
-
-	homeF() {
-		this.router.navigate(['/admin/main']);
-	}
-
-	profileF() {
-		this.router.navigate(['/admin/adminprofile']);
-	}
-
-	agroCompF() {
-		this.router.navigate(['/admin/agrocompanies']);
-	}
-
-	insuranceF() {
-		this.router.navigate(['/admin/insurance']);
-	}
-
-	farmersF() {
-		this.router.navigate(['/admin/farmers']);
-	}
-
-	productsF() {
-		this.router.navigate(['/admin/products']);
 	}
 }

@@ -1,47 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import {
+	NavigationStart,
+	Event,
+	NavigationEnd,
+	NavigationCancel,
+	NavigationError,
+	Router,
+	ActivatedRoute
+} from '@angular/router';
+// eslint-disable-next-line import/no-unresolved
+import { slideInAnimation } from 'src/app/app.animation';
 
 @Component({
 	selector: 'app-admin-home',
 	templateUrl: './admin-home.component.html',
-	styleUrls: ['./admin-home.component.css']
+	styleUrls: ['./admin-home.component.css'],
+	animations: [slideInAnimation]
 })
-export class AdminHomeComponent implements OnInit {
-	home = false;
+export class AdminHomeComponent {
+	loading = true;
 
-	profile = false;
-
-	agroComp = false;
-
-	insurance = false;
-
-	farmers = false;
-
-	constructor(private router: Router) {}
-
-	ngOnInit(): void {}
-
-	homeF() {
-		this.router.navigate(['/admin/main']);
+	constructor(private router: Router, private route: ActivatedRoute) {
+		this.router.events.subscribe({
+			next: (data: Event) => {
+				this.checkRouterEvents(data);
+			}
+		});
 	}
 
-	profileF() {
-		this.router.navigate(['/admin/adminprofile']);
-	}
+	checkRouterEvents(routerEvent: Event): void {
+		if (routerEvent instanceof NavigationStart) {
+			this.loading = true;
+		}
 
-	agroCompF() {
-		this.router.navigate(['/admin/agrocompanies']);
-	}
-
-	insuranceF() {
-		this.router.navigate(['/admin/insurance']);
-	}
-
-	farmersF() {
-		this.router.navigate(['/admin/farmers']);
-	}
-
-	productsF() {
-		this.router.navigate(['/admin/products']);
+		if (
+			routerEvent instanceof NavigationEnd ||
+			routerEvent instanceof NavigationError ||
+			routerEvent instanceof NavigationCancel
+		) {
+			this.loading = false;
+		}
 	}
 }

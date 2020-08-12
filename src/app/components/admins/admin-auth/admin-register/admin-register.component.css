@@ -1,5 +1,4 @@
 .main {
-  padding-top: 10vh;
   height: 120vh;
 }
 
@@ -27,12 +26,16 @@ em {
 
 .sub-main {
   border-radius: 10px;
-  border: 0.5px solid green;
-  background-color: green;
+  border: 0 solid green;
 }
 
 form {
   margin-bottom: 20px;
+  height: 100%;
+  background-color: green;
+  padding: 5px;
+  border-radius: 10px;
+  border: 0.5px solid green;
 }
 
 #btn-one {
@@ -48,4 +51,8 @@ form {
 
 #log {
   cursor: pointer;
+}
+
+.fa {
+  font-size: 1.2rem;
 }

@@ -15,6 +15,7 @@ import { InfoModule } from './components/information/info/info.module';
 import { DashboardModule } from './components/dashboard/dashboard/dashboard.module';
 import { MaterialModule } from './angular-material/material/material.module';
 import { AgroCompaniesModule } from './components/agro-companies/agro.module';
+
 @NgModule({
 	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent],
 	imports: [
