@@ -11,7 +11,7 @@ input {
 }
 
 label {
-  color: green;
+  color: #28a745;
   font-weight: 900;
 }
 
@@ -27,27 +27,16 @@ em {
 
 .sub-main {
   border-radius: 10px;
-  border: 0 solid green;
+  border: 0 solid #28a745;
 }
 
 form {
   margin-bottom: 20px;
+  background-color: #fff;
   height: 100%;
-  background-color: green;
   padding: 5px;
   border-radius: 10px;
-  border: 0.5px solid green;
-}
-
-#btn-one {
-  color: green;
-  background-color: #fff;
-  margin-right: 10px;
-}
-
-#btn-two {
-  color: green;
-  background-color: #fff;
+  border: 0.5px solid #28a745;
 }
 
 #log {
@@ -56,4 +45,5 @@ form {
 
 .fa {
   font-size: 1.2rem;
+  color: #450f5a;
 }

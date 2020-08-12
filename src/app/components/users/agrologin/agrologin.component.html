@@ -50,15 +50,19 @@
 				</div>
             </div>
 
-			<span (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
-			<button type="submit" class="btn btn-outline-secondary" id="btn-one" [disabled]="loginForm.invalid || loginForm.invalid">Save</button>
-			</span>
-			<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
+            <div>
+				<br>
+				<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+					<button  type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white" [disabled]="loginForm.invalid || loginForm.invalid" style="width: 100%;">Save</button>
+				</span>
+				<button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
+			</div>
 
-			<p class="text-light mt-3 font-weight-bold">Dont have an account? please
-				<span routerLink='/user/agro-signup' class="text-danger" id="log"> REGISTER</span></p>
+			<p class="text-success mt-2 font-weight-bold">Dont have an account? please
+				<span routerLink='/user/agro-signup' class="text-danger" id="log"> REGISTER</span>
+			</p>
         </form>
-       <br><br>
+       <br>
      </div>
    </div>
    <br><br>

@@ -1,58 +1,48 @@
 .main {
-  height: 120vh;
-}
+	min-height: 120vh;
+  }
 
-input {
-  width: 100%;
-  border-radius: 5px;
-  border: 0.1px solid #eee;
-  margin-bottom: 5px;
-}
+  input {
+	width: 100%;
+	border-radius: 5px;
+	border: 0.1px solid #eee;
+	margin-bottom: 5px;
+  }
 
-label {
-  color: #fff;
-  font-weight: 900;
-}
+  label {
+	color: #28a745;
+	font-weight: 900;
+  }
 
-.error input {
-  background-color: rgb(241, 168, 168);
-}
+  .error input {
+	background-color: rgb(241, 168, 168);
+  }
 
-em {
-  color: red;
-  background-color: #fff;
-  border-radius: 5px;
-}
+  em {
+	color: red;
+	background-color: #fff;
+	border-radius: 5px;
+  }
 
-.sub-main {
-  border-radius: 10px;
-  border: 0 solid green;
-}
+  .sub-main {
+	border-radius: 10px;
+	border: 0 solid #28a745;
+  }
 
-form {
-  margin-bottom: 20px;
-  height: 100%;
-  background-color: green;
-  padding: 5px;
-  border-radius: 10px;
-  border: 0.5px solid green;
-}
+  form {
+	margin-bottom: 20px;
+	background-color: #fff;
+	height: 100%;
+	padding: 5px;
+	border-radius: 10px;
+	border: 0.5px solid #28a745;
+  }
 
-#btn-one {
-  color: green;
-  background-color: #fff;
-  margin-right: 10px;
-}
+  #log {
+	cursor: pointer;
+  }
 
-#btn-two {
-  color: green;
-  background-color: #fff;
-}
-
-#log {
-  cursor: pointer;
-}
-
-.fa {
-  font-size: 1.2rem;
-}
+  .fa {
+	font-size: 1.2rem;
+	color: #450f5a;
+  }
