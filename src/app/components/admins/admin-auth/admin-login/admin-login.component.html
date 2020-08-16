@@ -9,26 +9,27 @@
 	<div class="sub-main row justify-content-center">
 	  <br>
 	  <br>
-	  <div class="col-md-6">
+	  <span class="fa fa-spinner spinner" *ngIf="loading"></span>
+	  <div class="col-sm-6 col-md-8" *ngIf="!loading">
 		<form autocomplete="off" novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
 
 			<div class="form-group"
-				[ngClass] = "{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}"
+				[ngClass] = "{'error': email.invalid && (email.touched || email.dirty || mouseOver)}"
 			>
-				<label for="username">Username:</label>
+				<label for="username">Email:</label>
 				<input
-				type="text"
+				type="email"
 					ngModel
-					name="username"
-					#usern = "ngModel"
-					placeholder=" Username..."
+					name="email"
+					#email = "ngModel"
+					placeholder="E-mail..."
 					class="form-control"
 					required
-					pattern = "[a-zA-Z].*"
+					email
 				>
-				<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
-					<em *ngIf="usern.errors.required">username is required.</em>
-					<em *ngIf="usern.errors.pattern">username must  with a letter.</em>
+				<div *ngIf="email.invalid && (email.touched || email.dirty || mouseOver)">
+					<em *ngIf="email.errors.required">email is required.</em>
+					<em *ngIf="email.errors.email">enter a valid email.</em>
 				</div>
             </div>
 
@@ -52,8 +53,8 @@
 
             <div>
 				<br>
-				<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
-					<button  type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white" [disabled]="loginForm.invalid || loginForm.invalid" style="width: 100%;">Save</button>
+				<span style="width: 100%;" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+					<button  type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded d-block text-white" [disabled]="loginForm.invalid || loginForm.invalid" style="width: 100%;" *ngIf="!loading">Save</button>
 				</span>
 				<button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
 			</div>

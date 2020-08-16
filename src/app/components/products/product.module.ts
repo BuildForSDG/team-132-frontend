@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/angular-material/material/material.module';
+import { CommonAuthGuard } from 'src/app/services/common-auth.guard';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductResolverService } from './product.resolver.service';
 import { ProductResolver } from './product-detail/product-resolve';
@@ -13,8 +14,13 @@ import { ProductThumbnailComponent } from './product-thumbnail/product-thumbnail
 
 const routes: Routes = [
 	{ path: 'products', component: ProductListComponent, resolve: { products: ProductResolverService } },
-	{ path: 'products/cart', component: CartComponent },
-	{ path: 'products/:id', component: ProductDetailComponent, resolve: { productResolve: ProductResolver } }
+	{ path: 'products/cart', component: CartComponent, canActivate: [CommonAuthGuard] },
+	{
+		path: 'products/:id',
+		component: ProductDetailComponent,
+		canActivate: [CommonAuthGuard],
+		resolve: { productResolve: ProductResolver }
+	}
 ];
 @NgModule({
 	declarations: [ProductListComponent, CartComponent, ProductDetailComponent, ProductThumbnailComponent],

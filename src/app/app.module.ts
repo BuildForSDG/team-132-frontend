@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,6 +17,7 @@ import { InfoModule } from './components/information/info/info.module';
 import { DashboardModule } from './components/dashboard/dashboard/dashboard.module';
 import { MaterialModule } from './angular-material/material/material.module';
 import { AgroCompaniesModule } from './components/agro-companies/agro.module';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
 	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent],
@@ -29,9 +32,10 @@ import { AgroCompaniesModule } from './components/agro-companies/agro.module';
 		DashboardModule,
 		ProductsModule,
 		AppRoutingModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		NgxSpinnerModule
 	],
-	providers: [],
+	providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

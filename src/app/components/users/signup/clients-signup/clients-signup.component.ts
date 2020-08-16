@@ -1,8 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
 import { NgForm } from '@angular/forms';
+import { CommonUserService } from 'src/app/services/commonuser';
 
 @Component({
 	templateUrl: './clients-signup.component.html',
@@ -11,9 +11,9 @@ import { NgForm } from '@angular/forms';
 export class ClientsSignupComponent {
 	mouseOver;
 
-	isTrue = false;
+	loading = false;
 
-	constructor(private router: Router, private userservice: UserService) {}
+	constructor(private router: Router, private userservice: CommonUserService) {}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	save(form: NgForm) {
@@ -21,20 +21,31 @@ export class ClientsSignupComponent {
 			return;
 		}
 
+		this.loading = true;
+
+		const id = form.value.idNumber ? form.value.idNumber : '';
+		const altphone = form.value.alternatePhone ? form.value.alternatePhone : '';
+
 		const user = {
 			firstname: form.value.firstname,
 			lastname: form.value.lastname,
 			email: form.value.email,
 			password: form.value.passwordGroup.password,
-			phoneNumber: form.value.phoneNumber,
-			role: form.value.role
+			phone: form.value.phoneNumber,
+			role: form.value.role,
+			idNumber: id,
+			alternatePhone: altphone
 		};
 
-		this.isTrue = true;
 		console.log(form.value);
 		this.userservice.signup(user).subscribe({
 			next: (data) => {
 				console.log(data);
+				this.router.navigate(['/user/login']);
+				this.loading = false;
+			},
+			error: (err) => {
+				console.log(err.message);
 			}
 		});
 	}

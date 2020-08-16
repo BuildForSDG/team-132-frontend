@@ -14,7 +14,7 @@ const url = 'https://zero-hunger-organic.herokuapp.com/api/v1/farmer';
 @Injectable({
 	providedIn: 'root'
 })
-export class UserService {
+export class CommonUserService {
 	private token;
 
 	private isAuth = false;
@@ -74,7 +74,7 @@ export class UserService {
 			if (this.redirectURL) {
 				this.router.navigateByUrl(this.redirectURL);
 			} else {
-				this.router.navigate(['/admin/panel/home']);
+				this.router.navigate(['/services/products']);
 			}
 		}
 	}
@@ -103,7 +103,7 @@ export class UserService {
 		this.authStatusListener.next(false);
 		clearTimeout(this.tokenTimer);
 		this.clearAuthData();
-		this.router.navigate(['/admin/panel/login']);
+		this.router.navigate(['/user/login']);
 	}
 
 	// set timer function

@@ -1,6 +1,9 @@
+/* eslint-disable import/no-unresolved */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Itoken } from 'src/app/user';
+import { CommonUserService } from 'src/app/services/commonuser';
 // eslint-disable-next-line import/no-unresolved
 
 @Component({
@@ -11,7 +14,9 @@ import { NgForm } from '@angular/forms';
 export class ClintsComponent implements OnInit {
 	mouseOver;
 
-	constructor(private router: Router) {}
+	loading;
+
+	constructor(private router: Router, private userservice: CommonUserService) {}
 
 	ngOnInit() {}
 
@@ -21,12 +26,24 @@ export class ClintsComponent implements OnInit {
 			return;
 		}
 
+		this.loading = true;
+
 		console.log(form.value);
-		const obj = {
-			username: form.value.username,
+		const user = {
+			email: form.value.email,
 			password: form.value.password
 		};
-		this.router.navigate(['/dashboard/buyer-dashboard']);
+
+		this.userservice.login(user).subscribe({
+			next: (data: Itoken) => {
+				console.log(data);
+				this.userservice.storeToke(data.token);
+				this.loading = false;
+			},
+			error: (err) => {
+				console.log(err.message);
+			}
+		});
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type

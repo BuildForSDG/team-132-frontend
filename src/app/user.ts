@@ -3,6 +3,13 @@ export interface User {
 	lastname: string;
 	email: string;
 	password: string;
-	phoneNumber: string;
+	phone: string;
 	role: string;
+	idNumber?: string;
+	alternatePhone?: string;
+}
+
+export interface Itoken {
+	token: string;
+	success: boolean;
 }
