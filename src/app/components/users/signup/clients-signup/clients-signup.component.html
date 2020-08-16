@@ -18,7 +18,7 @@
 						<div class="form-group"
 							[ngClass]="{'error': fname.invalid && (fname.touched || fname.dirty || mouseOver)}">
 							<label for="fname">Firstname *</label>
-							<input type="text" ngModel name="firstname" #fname="ngModel" placeholder="Firstname..."
+							<input type="text" ngModel name="firstname" #fname="ngModel" placeholder="firstname(required)"
 								class="form-control" class="form-control" required pattern="[a-zA-Z].*">
 							<div *ngIf="fname.invalid && (fname.touched || fname.dirty || mouseOver)">
 								<em *ngIf="fname.errors.required">first-name is required.</em>
@@ -31,7 +31,7 @@
 						<div class="form-group"
 							[ngClass]="{'error': sname.invalid && (sname.touched || sname.dirty || mouseOver)}">
 							<label for="lname">Lastname *</label>
-							<input type="text" ngModel name="lastname" #sname="ngModel" placeholder="Lastnameame..." id="lname"
+							<input type="text" ngModel name="lastname" #sname="ngModel" placeholder="lastname(required)" id="lname"
 								class="form-control" required pattern="[a-zA-Z].*">
 							<div *ngIf="sname.invalid && (sname.touched || sname.dirty || mouseOver)">
 								<em *ngIf="sname.errors.required">lastname name is required.</em>
@@ -47,7 +47,7 @@
 						<div class="form-group"
 							[ngClass]="{'error': usern.invalid && (usern.touched || usern.dirty || mouseOver)}">
 							<label for="usernum">Phone *</label>
-							<input type="tel" ngModel name="phoneNumber" #usern="ngModel" placeholder=" 700000000"
+							<input type="tel" ngModel name="phoneNumber" #usern="ngModel" placeholder="phoneNumber(required)"
 								class="form-control" id="username" required>
 							<div *ngIf="usern.invalid && (usern.touched || usern.dirty || mouseOver)">
 								<em *ngIf="usern.errors.required">user contacts required</em>
@@ -58,7 +58,7 @@
 					<div class="col-md-5">
 						<div class="form-group" [ngClass]="{'error':useremail.invalid && (useremail.touched || useremail.dirty || mouseOver)}">
 							<label for='email'>Email *</label>
-							<input type="text" name="email" ngModel placeholder="E-mail..." required id="email"
+							<input type="text" name="email" ngModel placeholder="email(required)" required id="email"
 								class="form-control" email #useremail="ngModel">
 							<div *ngIf="useremail.invalid && (useremail.touched || useremail.dirty || mouseOver)">
 								<em *ngIf="useremail.errors.required">email is required.</em>
@@ -77,7 +77,7 @@
 								<label for="password">Password *</label>
 								<input type="password" ngModel name="password" #pass="ngModel" class="form-control"
 									class="form-control" (input)="c_pass.control.updateValueAndValidity()" id="password"
-									placeholder=" Password..." required minlength="6">
+									placeholder="password(required)" required minlength="6">
 								<div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
 									<em *ngIf="pass.errors.required">password is required.</em>
 									<em *ngIf="pass.errors.minlength">password is short and weak.</em>
@@ -91,7 +91,7 @@
 								<label for="c_password">Confirm Password *</label>
 								<input type="password" ngModel name="c_password" #c_pass="ngModel"
 									appconfirmpassword="password" class="form-control" id="c_password"
-									placeholder=" Confirm password..." required minlength="6">
+									placeholder="confirm password(required)" required minlength="6">
 								<div *ngIf="c_pass.invalid && (c_pass.touched || c_pass.dirty || mouseOver)">
 									<em *ngIf="c_pass.errors.required">Confirm password.</em>
 									<em *ngIf="c_pass.errors.minlength">password is short and not matching</em>
@@ -109,7 +109,7 @@
 					<div class="col-md-5">
 						<div class="form-group">
 							<label for="phone">Alternate Phone</label>
-							<input type="tel" ngModel name="alternatePhone" #altphone="ngModel" placeholder=" 700000000 (Optional)"
+							<input type="tel" ngModel name="alternatePhone" #altphone="ngModel" placeholder="alternatePhone(optional)"
 								class="form-control" id="phone">
 						</div>
 					</div>
@@ -117,7 +117,7 @@
 					<div class="col-md-5">
 						<div class="form-group" [ngClass]="{'error':idnum.invalid && (idnum.touched || idnum.dirty || mouseOver)}">
 							<label for='idnum'>ID Number *</label>
-							<input type="text" name="idNumber" ngModel placeholder="ID Number" required id="idnum"
+							<input type="text" name="idNumber" ngModel placeholder="ID Number(required)" required id="idnum"
 								class="form-control"  #idnum="ngModel" required>
 							<div *ngIf="idnum.invalid && (idnum.touched || idnum.dirty || mouseOver)">
 								<em *ngIf="idnum.errors.required">Your id number is required</em>

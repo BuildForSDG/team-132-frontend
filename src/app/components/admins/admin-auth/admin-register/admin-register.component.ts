@@ -12,6 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 export class AdminRegisterComponent {
 	mouseOver;
 
+	loading = false;
+
 	constructor(private router: Router, private userservice: UserService) {}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -19,6 +21,8 @@ export class AdminRegisterComponent {
 		if (form.invalid) {
 			return;
 		}
+
+		this.loading = true;
 
 		const id = form.value.idNumber ? form.value.idNumber : '';
 		const altphone = form.value.alternatePhone ? form.value.alternatePhone : '';
@@ -38,6 +42,8 @@ export class AdminRegisterComponent {
 		this.userservice.signup(user).subscribe({
 			next: (data) => {
 				console.log(data);
+				this.router.navigate(['/admin/panel/login']);
+				this.loading = false;
 			},
 			error: (err) => {
 				console.log(err.message);
