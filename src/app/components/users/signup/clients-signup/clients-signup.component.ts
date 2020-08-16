@@ -52,6 +52,6 @@ export class ClientsSignupComponent {
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	cancel() {
-		this.router.navigate(['/']);
+		this.router.navigate(['/user/login']);
 	}
 }

@@ -53,6 +53,6 @@ export class AdminRegisterComponent {
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	cancel() {
-		this.router.navigate(['/']);
+		this.router.navigate(['/admin/panel/login']);
 	}
 }

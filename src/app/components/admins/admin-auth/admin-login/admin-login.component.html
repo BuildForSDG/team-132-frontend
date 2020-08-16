@@ -47,7 +47,7 @@
 							[disabled]="loginForm.invalid || loginForm.invalid" style="width: 100%;"
 							*ngIf="!loading">Save</button>
 					</span>
-					<button type="button" class="btn btn-secondary mt-3" (click)="cancel()" style="width: 100%;">Cancel</button>
+					<button type="button" class="btn btn-outline-secondary mt-3" (click)="cancel()" style="width: 100%;">Cancel</button>
 					<p class="text-success mt-2 font-weight-bold">Dont have an account? please
 						<span [routerLink]="['/admin/panel/signup']" class="text-danger" id="log"> REGISTER</span></p>
 				</div>

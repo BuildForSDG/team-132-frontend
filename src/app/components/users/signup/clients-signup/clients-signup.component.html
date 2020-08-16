@@ -149,14 +149,13 @@
 				</div>
 
 
-				<div style="width: 75%; margin-left: auto; margin-right: auto;">
+				<div class="w-75 mx-auto">
 					<br>
 					<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
 						<button type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white"
 							[disabled]="signUpForm.invalid || signUpForm.invalid" style="width: 100%;">Save</button>
 					</span>
-					<button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
-
+					<button type="button" class="btn btn-outline-secondary mt-3" (click)="cancel()" style="width: 100%;">Cancel</button>
 					<p class="text-success my-2 font-weight-bold">Have an account? please
 						<span routerLink='/user/client-signin' class="text-danger" id="log"> LOGIN</span></p>
 				</div>
