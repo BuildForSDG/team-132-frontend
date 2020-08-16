@@ -25,7 +25,7 @@ export class CommonAuthGuard implements CanActivate {
 		}
 
 		this.userservice.redirectURL = url;
-		this.router.navigate(['/admin/panel/login']);
+		this.router.navigate(['/user/login']);
 		return false;
 	}
 }
