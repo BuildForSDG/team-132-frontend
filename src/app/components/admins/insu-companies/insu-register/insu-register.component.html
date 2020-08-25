@@ -1,0 +1,107 @@
+<div class="main container bg-light">
+	<br>
+	<div class="text-center">
+		<span class="d-block"><i class="fa fa-user"></i></span>
+		<h1 style="color: green;">goOrganic</h1>
+		<p class="lead" style="margin-bottom: 20px;">Please Register here...</p>
+		<p class="text-success mb-2 font-weight-bold">Admin Panel</p>
+	</div>
+	<div class="sub-main row justify-content-center">
+	  <br>
+	  <br>
+	  <span class="fa fa-spinner spinner" *ngIf="loading"></span>
+	  <div class="col-sm-6 col-md-8" *ngIf="!loading">
+		<form autocomplete="off" novalidate #signUpForm="ngForm"  (ngSubmit)="save(signUpForm)">
+
+			<div class="row justify-content-around mt-2">
+				<div class="col-md-5">
+					<div class="form-group"
+						[ngClass]="{'error': companyName.invalid && (companyName.touched || companyName.dirty || mouseOver)}">
+						<label for="companyName">companyName *</label>
+						<input type="text" ngModel name="companyName" #companyName="ngModel" placeholder="companyName(required)"
+							class="form-control" class="form-control" required pattern="[a-zA-Z].*">
+						<div *ngIf="companyName.invalid && (companyName.touched || companyName.dirty || mouseOver)">
+							<em *ngIf="companyName.errors.required">company name is required.</em>
+							<em *ngIf="companyName.errors.pattern">company name must with a letter.</em>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-5">
+					<div class="form-group"
+						[ngClass]="{'error': pocPhoneNumber.invalid && (pocPhoneNumber.touched || pocPhoneNumber.dirty || mouseOver)}">
+						<label for="pocPhoneNumber">pocPhoneNumber *</label>
+						<input type="tel" ngModel name="pocPhoneNumber" #pocPhoneNumber="ngModel" placeholder="pocPhoneNumber(required)" id="pocPhoneNumber"
+							class="form-control" required>
+						<div *ngIf="pocPhoneNumber.invalid && (pocPhoneNumber.touched || pocPhoneNumber.dirty || mouseOver)">
+							<em *ngIf="pocPhoneNumber.errors.required">pocPhoneNumber name is required.</em>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+				<div class="row justify-content-around">
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': pocFullName.invalid && (pocFullName.touched || pocFullName.dirty || mouseOver)}">
+							<label for="pocFullName">pocFullName *</label>
+							<input type="text" ngModel name="pocFullName" #pocFullName="ngModel"
+								class="form-control"
+								placeholder="pocFullName(required)" required>
+							<div *ngIf="pocFullName.invalid && (pocFullName.touched || pocFullName.dirty || mouseOver)">
+								<em *ngIf="pocFullName.errors.required">pocFullName is required.</em>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': idNumber.invalid && (idNumber.touched || idNumber.dirty || mouseOver)}">
+							<label for="idNumber">idNumber *</label>
+							<input type="number"
+							    class="form-control" id="idNumber"
+								placeholder="idNumber(required)" required  ngModel name="idNumber" #idNumber="ngModel">
+							<div *ngIf="idNumber.invalid && (idNumber.touched || idNumber.dirty || mouseOver)">
+								<em *ngIf="idNumber.errors.required">idNumber is required.</em>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row mt-2 ml-2">
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': businessEmail.invalid && (businessEmail.touched || businessEmail.dirty || mouseOver)}">
+							<label for="businessEmail">businessEmail *</label>
+							<input type="email" ngModel name="businessEmail" #businessEmail="ngModel" placeholder="businessEmail(required)"
+								class="form-control" id="username" required email>
+							<div *ngIf="businessEmail.invalid && (businessEmail.touched || businessEmail.dirty || mouseOver)">
+								<em *ngIf="businessEmail.errors.required">user contacts required</em>
+								<em *ngIf="businessEmail.errors.email">Enter a valid email</em>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			<div class="w-75 mx-auto">
+				<br>
+				<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+					<button type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white"
+						[disabled]="signUpForm.invalid || signUpForm.invalid" style="width: 100%;">Save</button>
+				</span>
+				<button type="button" class="btn btn-outline-secondary mt-3" (click)="cancel()" style="width: 100%;">Cancel</button>
+
+				<p class="text-success my-2 font-weight-bold">Have an account? please
+					<span [routerLink]="['/admin/panel/login']" class="text-danger" id="log"> LOGIN</span></p>
+			</div>
+		</form>
+	   <br>
+     </div>
+   </div>
+</div>
+
+

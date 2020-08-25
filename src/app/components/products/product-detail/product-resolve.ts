@@ -10,6 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ProductResolver implements Resolve<IproductResolved> {
 	constructor(private productservice: ProductsService) {}
+
 	resolve(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
@@ -23,11 +24,11 @@ export class ProductResolver implements Resolve<IproductResolved> {
 		}
 
 		return this.productservice.getProduct(id).pipe(
-			map(product => ({product})),
+			map((product) => ({ product })),
 			catchError((err) => {
 				const message = `There occured an error: ${err}`;
 				console.error(message);
-				return of({product: null, error: message});
+				return of({ product: null, error: message });
 			})
 		);
 	}

@@ -1,0 +1,20 @@
+.error input, .error select, .error textarea {
+	background-color: rgb(241, 168, 168);
+  }
+
+  .error ::-webkit-input-placeholder { color: #999; }
+  .error :-moz-placeholder { color: #999; }
+  .error ::-moz-placeholder {color: #999; }
+  .error :ms-input-placeholder { color: #999; }
+
+  em{
+	color: red;
+	background-color: #ffffff;
+	border-radius: 5px;
+	text-decoration: underline;
+  }
+
+  label {
+	  color: green;
+	  /*color: #28a745;*/
+  }

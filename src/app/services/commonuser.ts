@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
-import { User } from '../user';
+import { User, Itoken } from '../user';
 
 const url = 'https://zero-hunger-organic.herokuapp.com/api/v1/farmer';
 @Injectable({
@@ -49,7 +49,16 @@ export class CommonUserService {
 			'Content-Type': 'application/json'
 		});
 
-		return this.http.post(`${url}/register`, obj, { headers });
+		this.http.post(`${url}/register`, obj, { headers }).subscribe({
+			next: (data) => {
+				console.log(data);
+				this.router.navigate(['/user/login']);
+			},
+			error: (err) => {
+				console.log(err.message);
+				this.authStatusListener.next(false);
+			}
+		});
 	}
 
 	// validate users
@@ -58,7 +67,18 @@ export class CommonUserService {
 			'Content-Type': 'application/json'
 		});
 
-		return this.http.post(`${url}/sign-in`, user, { headers });
+		this.http.post(`${url}/sign-in`, user, { headers }).subscribe({
+			next: (data: Itoken) => {
+				console.log(data);
+				if (data.token) {
+					this.storeToke(data.token);
+				}
+			},
+			error: (err) => {
+				console.log(err.message);
+				this.authStatusListener.next(false);
+			}
+		});
 	}
 
 	// store token after success login
@@ -93,6 +113,12 @@ export class CommonUserService {
 			this.authTimer(expireIn);
 			this.isAuth = true;
 			this.authStatusListener.next(true);
+
+			if (this.redirectURL) {
+				this.router.navigateByUrl(this.redirectURL);
+			} else {
+				this.router.navigate(['/admin/panel/home']);
+			}
 		}
 	}
 

@@ -1,20 +1,23 @@
 /* eslint-disable import/no-unresolved */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Itoken } from 'src/app/user';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-admin-login',
 	templateUrl: './admin-login.component.html',
 	styleUrls: ['./admin-login.component.css']
 })
-export class AdminLoginComponent {
+export class AdminLoginComponent implements OnInit, OnDestroy {
 	mouseOver;
 
 	loading;
+
+	authStatusSub: Subscription;
 
 	constructor(
 		private router: Router,
@@ -22,6 +25,14 @@ export class AdminLoginComponent {
 		private route: ActivatedRoute,
 		private spinner: NgxSpinnerService
 	) {}
+
+	ngOnInit(): void {
+		this.authStatusSub = this.userservice.getAuthStatusListener().subscribe({
+			next: (data) => {
+				this.loading = data;
+			}
+		});
+	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	save(form: NgForm) {
@@ -35,16 +46,7 @@ export class AdminLoginComponent {
 		};
 
 		console.log(form.value);
-		this.userservice.login(user).subscribe({
-			next: (data: Itoken) => {
-				console.log(data);
-				this.userservice.storeToke(data.token);
-				this.loading = false;
-			},
-			error: (err) => {
-				console.log(err.message);
-			}
-		});
+		this.userservice.login(user);
 
 		// this.router.navigate(['/admin/panel/home']);
 	}
@@ -52,5 +54,9 @@ export class AdminLoginComponent {
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	cancel() {
 		this.router.navigate(['/']);
+	}
+
+	ngOnDestroy(): void {
+		this.authStatusSub.unsubscribe();
 	}
 }

@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,6 +17,15 @@ import { AdminProfileComponent } from '../admin-auth/admin-profile/admin-profile
 import { AdminProdComponent } from '../admin-prod/admin-prod.component';
 import { AdminpanelComponent } from '../adminpanel/adminpanel.component';
 import { AdminConfirmedEqualValidatorDirective } from './validate.password';
+import { UserResolver } from '../farmers/farmers/farmer.resolver';
+import { EditfarmerComponent } from '../farmers/editfarmer/editfarmer.component';
+import { OneFarmerResolver } from '../farmers/farmers/onefarmer.resolver';
+import { InsuRegisterComponent } from '../insu-companies/insu-register/insu-register.component';
+import { InsuranceAllResolver } from '../insu-companies/insurance.resolver';
+import { InsuGuardGuard } from '../insu-companies/insu-guard.guard';
+import { InsuEditComponent } from '../insu-companies/insu-edit/insu-edit.component';
+import { OneInsurance } from '../insu-companies/oneinsuresolve';
+import { InsuEditGuardGuard } from '../insu-companies/insu-edit-guard.guard';
 
 // eslint-disable-next-line import/named
 const AdminRoutes: Routes = [
@@ -23,15 +33,34 @@ const AdminRoutes: Routes = [
 		path: 'panel',
 		component: AdminHomeComponent,
 		children: [
-			{ path: '', redirectTo: 'login', pathMatch: 'full' },
+			{ path: 'profile', component: AdminProfileComponent, canActivate: [AuthGuard] },
+			{
+				path: 'farmers',
+				component: FarmersAdminComponent,
+				canActivate: [AuthGuard],
+				resolve: { user: UserResolver }
+			},
+			{ path: 'farmers/:_id', component: EditfarmerComponent, resolve: { singleuser: OneFarmerResolver } },
+			{ path: 'agrocompanies', component: AgroCompaniesComponent, canActivate: [AuthGuard] },
+			{
+				path: 'insurance',
+				component: InsuranceComponent,
+				resolve: { allInsurance: InsuranceAllResolver },
+				canActivate: [AuthGuard]
+			},
+			{ path: 'insurance/register', component: InsuRegisterComponent, canDeactivate: [InsuGuardGuard] },
+			{
+				path: 'insurance/:_id',
+				component: InsuEditComponent,
+				resolve: { singleInsu: OneInsurance },
+				canActivate: [AuthGuard],
+				canDeactivate: [InsuEditGuardGuard]
+			},
+			{ path: 'products', component: AdminProdComponent, canActivate: [AuthGuard] },
+			{ path: 'home', component: AdminpanelComponent, canActivate: [AuthGuard] },
 			{ path: 'login', component: AdminLoginComponent },
 			{ path: 'signup', component: AdminRegisterComponent },
-			{ path: 'home', component: AdminpanelComponent, canActivate: [AuthGuard] },
-			{ path: 'profile', component: AdminProfileComponent, canActivate: [AuthGuard] },
-			{ path: 'farmers', component: FarmersAdminComponent, canActivate: [AuthGuard] },
-			{ path: 'agrocompanies', component: AgroCompaniesComponent, canActivate: [AuthGuard] },
-			{ path: 'insurance', component: InsuranceComponent, canActivate: [AuthGuard] },
-			{ path: 'products', component: AdminProdComponent, canActivate: [AuthGuard] }
+			{ path: '', redirectTo: 'home', pathMatch: 'full' }
 		]
 	}
 ];
@@ -47,6 +76,9 @@ const AdminRoutes: Routes = [
 		InsuranceComponent,
 		AdminProfileComponent,
 		AdminProdComponent,
+		EditfarmerComponent,
+		InsuRegisterComponent,
+		InsuEditComponent,
 		AdminConfirmedEqualValidatorDirective
 	],
 	imports: [CommonModule, RouterModule.forChild(AdminRoutes), FormsModule, ReactiveFormsModule, MaterialModule],
