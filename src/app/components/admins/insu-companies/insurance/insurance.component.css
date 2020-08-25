@@ -3,5 +3,5 @@ p {
 }
 
 .delete {
-	animation: animate__backOutDown;
+  animation: animate__backOutDown;
 }
