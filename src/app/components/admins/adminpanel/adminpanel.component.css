@@ -1,3 +1,9 @@
 p {
   font-weight: normal;
 }
+
+.fa {
+  font-size: 4em;
+  color: #450f5a;
+  font-weight: 900;
+}

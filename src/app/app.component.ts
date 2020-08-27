@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Event, NavigationEnd, NavigationCancel, NavigationError, Router } from '@angular/router';
 import { slideInAnimation } from './app.animation';
+import { CommonUserService } from './services/commonuser';
 
 @Component({
 	selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
 
 	amos = false;
 
-	constructor(private router: Router) {
+	constructor(private router: Router, private userservice: CommonUserService) {
 		this.router.events.subscribe({
 			next: (data: Event) => {
 				this.checkRouterEvents(data);
@@ -26,9 +27,7 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		setTimeout(() => {
-			this.amos = true;
-		}, 5000);
+		this.userservice.autoAuth();
 	}
 
 	checkRouterEvents(routerEvent: Event): void {

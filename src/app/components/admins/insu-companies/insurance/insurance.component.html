@@ -5,26 +5,30 @@
 		<br>
 		<mat-card>
 			<br>
-			<button class="btn btn-success">Add Company</button>
+			<button class="btn btn-success" [routerLink]="['/admin/panel/insurance/register']">Add Company</button>
 			<br>
 			<br>
 			<hr>
 			<div class="table-responsive">
 				<table class="table">
 					<thead class="text-center">
-						<th>Company Name</th>
-						<th>Location</th>
-						<th>Year Of Operations</th>
+						<th>CompanyName</th>
+						<th>Email</th>
+						<th>Contacts</th>
+						<th>Created Date</th>
+						<th>ID Number</th>
 						<th>Actions</th>
 					</thead>
 					<tbody>
-						<tr *ngFor="let company of companies" class="text-center">
-							<td>{{company.name}}</td>
-							<td>{{company.location}}</td>
-							<td>{{company.yrOfOperation}}</td>
+						<tr *ngFor="let company of companies" class="text-center animate__animated" [ngClass]="{'delete': !!animation}">
+							<td>{{company.companyName}}</td>
+							<td>{{company.businessEmail}}</td>
+							<td>{{company.pocPhoneNumber}}</td>
+							<td>{{company.createdAt | date:'shortDate'}}</td>
+							<td>{{company.idNumber}}</td>
 							<td class="justify-content-center">
-								<button class="btn btn-warning mr-2">Edit</button>
-								<button class="btn btn-danger">Delete</button>
+								<button class="btn btn-warning mr-2" [routerLink]="['/admin/panel/insurance', company._id]">Edit</button>
+								<button class="btn btn-danger" (click)="delete(company._id)">Delete</button>
 							</td>
 						</tr>
 					</tbody>

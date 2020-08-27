@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+/* eslint-disable import/no-unresolved */
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
 	NavigationStart,
 	Event,
@@ -8,8 +9,9 @@ import {
 	Router,
 	ActivatedRoute
 } from '@angular/router';
-// eslint-disable-next-line import/no-unresolved
 import { slideInAnimation } from 'src/app/app.animation';
+import { UserService } from 'src/app/services/user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-admin-home',
@@ -17,10 +19,14 @@ import { slideInAnimation } from 'src/app/app.animation';
 	styleUrls: ['./admin-home.component.css'],
 	animations: [slideInAnimation]
 })
-export class AdminHomeComponent {
+export class AdminHomeComponent implements OnInit, OnDestroy {
+	authStatusListenerSub: Subscription;
+
+	adminIsAuth;
+
 	loading = true;
 
-	constructor(private router: Router, private route: ActivatedRoute) {
+	constructor(private router: Router, private route: ActivatedRoute, private userservice: UserService) {
 		this.router.events.subscribe({
 			next: (data: Event) => {
 				this.checkRouterEvents(data);
@@ -40,5 +46,28 @@ export class AdminHomeComponent {
 		) {
 			this.loading = false;
 		}
+	}
+
+	ngOnInit(): void {
+		// auto autheticate user
+		this.userservice.autoAuth();
+
+		console.log(this.userservice.autoAuth());
+		// auth status
+		this.adminIsAuth = this.userservice.getIsAuth();
+		this.authStatusListenerSub = this.userservice.getAuthStatusListener().subscribe({
+			next: (data) => {
+				console.log(data);
+				this.adminIsAuth = data;
+			}
+		});
+	}
+
+	logout() {
+		this.userservice.logout();
+	}
+
+	ngOnDestroy(): void {
+		this.authStatusListenerSub.unsubscribe();
 	}
 }
