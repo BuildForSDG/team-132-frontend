@@ -11,7 +11,7 @@
 		<br>
 		<span class="fa fa-spinner spinner" *ngIf="loading"></span>
 		<div class="col-sm-6 col-md-8" *ngIf="!loading">
-			<form autocomplete="off" novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
+			<form  novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
 
 				<div class="row justify-content-around mt-2">
 					<div class="col-md-5">

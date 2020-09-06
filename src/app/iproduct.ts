@@ -8,6 +8,8 @@ export interface Iproduct {
 	details: string;
 	releaseDate: string;
 	imageUrl: string;
+	num?: number;
+	total?: number;
 }
 
 export interface IproductResolved {

@@ -85,11 +85,11 @@ export class CommonUserService {
 	storeToke(token) {
 		if (token) {
 			this.token = token;
-			this.authTimer(36000);
+			this.authTimer(360000);
 			this.isAuth = true;
 			this.authStatusListener.next(true);
 			const now = new Date();
-			const expireIn = new Date(now.getTime() + 36000);
+			const expireIn = new Date(now.getTime() + 360000);
 			this.setAuthData(token, expireIn);
 			if (this.redirectURL) {
 				this.router.navigateByUrl(this.redirectURL);
@@ -114,11 +114,11 @@ export class CommonUserService {
 			this.isAuth = true;
 			this.authStatusListener.next(true);
 
-			if (this.redirectURL) {
+			/* if (this.redirectURL) {
 				this.router.navigateByUrl(this.redirectURL);
 			} else {
-				this.router.navigate(['/admin/panel/home']);
-			}
+				this.router.navigate(['/services/products']);
+			} */
 		}
 	}
 
@@ -144,19 +144,19 @@ export class CommonUserService {
 
 	// store token on localstorage
 	private setAuthData(token: string, expireIn: Date) {
-		localStorage.setItem('token', token);
+		localStorage.setItem('tokenUser', token);
 		localStorage.setItem('expireIn', expireIn.toISOString());
 	}
 
 	// clear locastorage
 	private clearAuthData() {
-		localStorage.removeItem('token');
+		localStorage.removeItem('tokenUser');
 		localStorage.removeItem('expireIn');
 	}
 
 	// get store data in localstorage
 	private getAuthData() {
-		const localToken = localStorage.getItem('token');
+		const localToken = localStorage.getItem('tokenUser');
 		const localExpireIn = localStorage.getItem('expireIn');
 
 		if (!localToken || !localExpireIn) {

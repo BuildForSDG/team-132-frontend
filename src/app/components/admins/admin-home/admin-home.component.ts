@@ -52,7 +52,7 @@ export class AdminHomeComponent implements OnInit, OnDestroy {
 		// auto autheticate user
 		this.userservice.autoAuth();
 
-		console.log(this.userservice.autoAuth());
+		console.log('error', this.userservice.autoAuth());
 		// auth status
 		this.adminIsAuth = this.userservice.getIsAuth();
 		this.authStatusListenerSub = this.userservice.getAuthStatusListener().subscribe({

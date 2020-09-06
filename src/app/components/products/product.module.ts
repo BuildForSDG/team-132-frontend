@@ -11,10 +11,12 @@ import { ProductResolver } from './product-detail/product-resolve';
 import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductThumbnailComponent } from './product-thumbnail/product-thumbnail.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
 	{ path: 'products', component: ProductListComponent, resolve: { products: ProductResolverService } },
-	{ path: 'products/cart', component: CartComponent, canActivate: [CommonAuthGuard] },
+	{ path: 'products/cart', component: ShoppingcartComponent, canActivate: [CommonAuthGuard] },
 	{
 		path: 'products/:id',
 		component: ProductDetailComponent,
@@ -23,7 +25,14 @@ const routes: Routes = [
 	}
 ];
 @NgModule({
-	declarations: [ProductListComponent, CartComponent, ProductDetailComponent, ProductThumbnailComponent],
+	declarations: [
+		ProductListComponent,
+		CartComponent,
+		ProductDetailComponent,
+		ProductThumbnailComponent,
+		ShoppingcartComponent,
+		CheckoutComponent
+	],
 	imports: [CommonModule, RouterModule.forChild(routes), MaterialModule, FormsModule],
 	exports: [RouterModule, FormsModule, MaterialModule]
 })
