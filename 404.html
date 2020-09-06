@@ -8,7 +8,7 @@
   <base href="https://BuildForSDG.github.io/team-132-frontend/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="zero hunger.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet" async>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" async>
   <link rel="manifest" href="manifest.webmanifest">
@@ -16,7 +16,65 @@
   <meta name="theme-color" content="#1976d2">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="styles.5336eb592efb4ab1f621.css"></head>
+
+  <link rel="icon" type="image/png" href="./assets/images/go.PNG">
+  <style type="text/css">
+    body, html {
+      height: 100%;
+    }
+    .app-loading {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .app-loading .spinner {
+      height: 200px;
+      width: 200px;
+      animation: rotate 2s linear infinite;
+      transform-origin: center center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .app-loading .spinner .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.33ca5401252bf3c02ed0.css"></head>
 <body class="mat-typography">
 	<script>
 		(function () {
@@ -31,7 +89,20 @@
 		  }
 		})();
 	  </script>
-  <app-root></app-root>
+  <app-root>
+	<div class="app-loading">
+		<div class="logo">
+		  <svg class="spinner" viewBox="25 25 50 50">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+		  </svg>
+		</div>
+	</div>
+  </app-root>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script type="text/javascript">
+	const stripe   = Stripe('pk_test_VkJ8y5HG6QjIHyBR6aBM3fB000bigg8HhF');
+	const elements = stripe.elements();
+  </script>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
-<script src="runtime-es2015.b5e5621212aacbf656b3.js" type="module"></script><script src="runtime-es5.b5e5621212aacbf656b3.js" nomodule defer></script><script src="polyfills-es5.ac1afda2e17cdb8f9af6.js" nomodule defer></script><script src="polyfills-es2015.6511e04b4ac35334e1bc.js" type="module"></script><script src="scripts.030727a4aa592fa13757.js" defer></script><script src="main-es2015.95928687a5c23548558a.js" type="module"></script><script src="main-es5.95928687a5c23548558a.js" nomodule defer></script></body>
+<script src="runtime-es2015.0cb1b5a0acc90ce4e4da.js" type="module"></script><script src="runtime-es5.0cb1b5a0acc90ce4e4da.js" nomodule defer></script><script src="polyfills-es5.aff4926a84bd42e701a7.js" nomodule defer></script><script src="polyfills-es2015.19c5d70a17d5ae1cfc77.js" type="module"></script><script src="scripts.74f623b642e48f0e9178.js" defer></script><script src="main-es2015.10267752e4d2c555d616.js" type="module"></script><script src="main-es5.10267752e4d2c555d616.js" nomodule defer></script></body>
 </html>
