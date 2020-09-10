@@ -9,18 +9,19 @@ import { MaterialModule } from './angular-material/material/material.module';
 import { HomestarComponent } from './components/home/homestar/homestar.component';
 import { ProductResolverService } from './components/products/product.resolver.service';
 import { Loader } from './preload.strategy';
+import { Notfound404Component } from './notfound404/notfound404.component';
 // import { ProductsModule } from './components/products/product.module';
 // import { ConfirmedEqualValidatorDirective } from './components/users/signup/clients-signup/confirmed.directive';
 
 const routes: Routes = [
-	{ path: '', component: HomeComponent, resolve: { products: ProductResolverService } },
+	{ path: 'home', component: HomeComponent, resolve: { products: ProductResolverService } },
 	{
 		path: 'services',
 		loadChildren: () => import('./components/products/product.module').then((m) => m.ProductsModule),
 		data: { preload: false, delay: false }
 	},
 	{
-		path: '',
+		path: 'home/about',
 		loadChildren: () => import('./components/information/info/info.module').then((m) => m.InfoModule),
 		data: { preload: true, delay: true }
 	},
@@ -43,10 +44,12 @@ const routes: Routes = [
 		path: 'dashboard',
 		loadChildren: () => import('./components/dashboard/dashboard/dashboard.module').then((m) => m.DashboardModule),
 		data: { preload: false, delay: true }
-	}
+	},
+	{ path: '', redirectTo: 'home', pathMatch: 'full' },
+	{ path: '**', component: Notfound404Component }
 ];
 @NgModule({
-	declarations: [HomeComponent, HomestarComponent],
+	declarations: [HomeComponent, HomestarComponent, Notfound404Component],
 	imports: [
 		RouterModule.forRoot(routes, { preloadingStrategy: Loader }),
 		MaterialModule,

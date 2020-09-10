@@ -1,49 +1,56 @@
 <div class="container main">
-  <div class="row">
-		<div class="col-md-9">
-		  <br>
-		  <h2 class="py-2 bg-success pl-2 text-white">{{pageTitle}}</h2>
-		  <hr>
-		</div>
-  </div>
-  <div class="sub-main" *ngIf="product">
-    <div class="col-md-9">
-      <img [src]="product?.imageUrl" [alt]="product?.name">
-    </div>
-
-    <div class="row">
-      <div class="col-md-9">
+   <div class="row justify-content-center">
+      <div class="col-sm-10">
+		<div class="row">
+			<div class="col-md-9">
+			  <br>
+			  <h2 class="py-2 bg-success pl-2 text-white border " style="border-radius: 8px;">{{pageTitle}}</h2>
+			  <hr>
+			</div>
+	  </div>
+	  <div class="sub-main" *ngIf="product">
+		  <div class="row">
+			<div class="col-md-5">
+				<img [src]="product?.imageUrl" [alt]="product?.name">
+			</div>
+			<div class="col-md-5">
+					<br>
+					<strong class="text-success">Price: </strong><span> {{ product?.price | currency:'Ksh': 'symbol':'1.2-2'}}</span><br>
+					<strong class="text-success">Realese Date:</strong><span> {{product?.releaseDate}}</span><br>
+					<strong class="text-success">Product Code:</strong><span> {{product?.productCode}}</span><br>
+					<div>
+						<div  class="crop div" [style.width.px]="starWidth" [title]="rating">
+							<div class="div" style="width: 75px">
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+						</div>
+					</div>
+			</div>
+		  </div>
         <br>
-        <strong class="text-success">Price: </strong><span> {{ product?.price | currency:'Ksh': 'symbol':'1.2-2'}}</span><br>
-        <strong class="text-success">Realese Date:</strong><span> {{product?.releaseDate}}</span><br>
-        <strong class="text-success">Product Code:</strong><span> {{product?.productCode}}</span><br>
-        <div>
-			<div  class="crop div" [style.width.px]="starWidth" [title]="rating">
-				<div class="div" style="width: 75px">
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
-				</div>
+		<div class="row">
+			<div class="col-sm-10 ml-md-1 ">
+			  <h3 class="text-success mb-1 font-weight-bold" style="text-decoration:underline;">Product Details</h3>
+			  <p class="details  text-success px-1 py-3 text-justify border border-success" style="border-radius: 8px;">{{product?.description}}</p>
 			</div>
 		</div>
-        <div class="mt-2">
-          <h3 class="text-success mb-1 font-weight-bold">Product Details</h3>
-          <p class="details bg-success text-white py-3 text-justify">{{product?.description}}</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <button type="button" class="btn btn-outline-success mr-3 " >___Buy</button>
-      <button type="button" class="btn btn-outline-secondary" (click)="addToCart(product)">
-		  Add to Cart
-	  </button>
-    </div>
-    <div>
-      <button type="button" class="btn btn-outline-secondary" id="btn_three" [routerLink]="['/services/products']">___Back</button>
-    </div>
-  </div>
+		<div class="row">
+			<div class="col-md-5">
+				<button type="button" class="btn btn-success mr-3 text-white w-75 mx-auto" [routerLink]="['/services/products']" style="border-radius: 8px;">Shop</button>
+			</div>
+			<div class="col-md-5">
+				<button type="button" class="btn btn-warning text-danger w-75 mx-auto" (click)="addToCart(product)" style="border-radius: 8px;">
+					ADD TO CART
+				</button>
+			</div>
+		</div>
+	  </div>
+	  </div>
+   </div>
   <br>
   <div *ngIf="!product" class="bg-danger text-white font-weight-bold">
 	  {{errorMessage}}

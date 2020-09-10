@@ -113,12 +113,14 @@ export class UserService {
 			this.authTimer(expireIn);
 			this.isAuth = true;
 			this.authStatusListener.next(true);
+			this.setAuthData(this.token, localData.expireIn);
 			console.log(this.router.url);
-			if (this.redirectURL) {
+
+			/* if (this.redirectURL) {
 				this.router.navigateByUrl(this.redirectURL);
-			} else {
-				this.router.navigateByUrl(this.router.url);
-			}
+			} */
+			this.router.navigate(['/admin/panel/home']);
+			return false;
 		}
 	}
 

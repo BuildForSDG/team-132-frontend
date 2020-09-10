@@ -1,39 +1,64 @@
-<div class="container-fluid main">
-	<mat-card id="matCard">
-  <div class="row" id="row-one">
-    <div class="col-md-7"><p style="text-align: left; margin-right: 10px;"><i class="fa fa-shopping-cart"></i></p></div>
-    <div class="col-md-5"><h2>Items In Cart</h2></div>
-  </div>
-  <br>
+<div class="container main">
+	<div *ngIf="product">
+		<div class="row">
+			<div class="col-md-4">
+				<div>
+					<img [src]="product.imageUrl" [alt]="product.name" >
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="bg-success text-white">{{product.name}}</div>
+				<br>
+				<div class="text-warning" style="font-weight: bold;">Quatity: {{product.num}}</div>
+				<div class="mt-2 text-success">Price: {{totalUnit() | currency:"ksh ": "symbol": "1.2-2"}}</div>
+				<div class="mt-2">
+					<em class="mb-0 text-success">Change Quantity</em>
+					<input type="number" [(ngModel)]="product.num" min="0" (ngModelChange)="modelChanged($event)"
+						style="width: 100%; border-radius: 5px;" class="form-control mt-0"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<mat-card id="matCard">
+		<div class="row" id="row-one">
+			<div class="col-md-7">
+				<p style="text-align: left; margin-right: 10px;"><i class="fa fa-shopping-cart"></i></p>
+			</div>
+			<div class="col-md-5">
+				<h2>Items In Cart</h2>
+			</div>
+		</div>
+		<br>
 
-  <div class="row mb-5" >
-   <mat-card  class="col-md-9 mb-1 mt-2" *ngFor="let item of items" class="cart-item">
-    <div class="cart-item-child mb-1">
-      <span>{{item.name}}</span>
-      <span>{{item.price | currency:'Ksh ': 'symbol': '1.2-2'}}</span>
-      <span><button type="button" class="btn btn-light text-success">CROMO</button></span>
-   </div>
-   </mat-card>
-  </div>
+		<div class="row mb-5">
+			<mat-card class="col-md-9 mb-1 mt-2" *ngFor="let item of items" class="cart-item">
+				<div class="cart-item-child mb-1">
+					<span>{{item.name}}</span>
+					<span>{{item.price | currency:'Ksh ': 'symbol': '1.2-2'}}</span>
+					<span><button type="button" class="btn btn-light text-success">CROMO</button></span>
+				</div>
+			</mat-card>
+		</div>
 
-  <div class="row">
-    <mat-card  class="col-md-9" class="cart-item">
-     <div class="cart-item-child">
-       <button type="button" class="btn btn-light text-success px-3" >BUY</button>
-    </div>
-    </mat-card>
-   </div>
-  <br><br>
+		<div class="row">
+			<mat-card class="col-md-9" class="cart-item">
+				<div class="cart-item-child">
+					<button type="button" class="btn btn-light text-success px-3">BUY</button>
+				</div>
+			</mat-card>
+		</div>
+		<br><br>
 
-  <div class="row">
-    <mat-card class="col-md-9 summary" >
-      <div class="cart-item-child">
-        <button type="button" class="btn btn-success text-light"  [routerLink]="['/services/products']">Add More/ Back</button>
-        <button type="button" class="btn btn-outline-secondary" id="btn-three" (click)="clearCart()" >Clear Cart</button>
-      </div>
-    </mat-card>
-  </div>
+		<div class="row">
+			<mat-card class="col-md-9 summary">
+				<div class="cart-item-child">
+					<button type="button" class="btn btn-success text-light" [routerLink]="['/services/products']">Add
+						More/ Back</button>
+					<button type="button" class="btn btn-outline-secondary" id="btn-three" (click)="clearCart()">Clear
+						Cart</button>
+				</div>
+			</mat-card>
+		</div>
 	</mat-card>
-	<br>
+	<br>-->
 </div>
-

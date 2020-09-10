@@ -24,6 +24,7 @@ import { MaterialModule } from './angular-material/material/material.module';
 import { AuthInterceptor } from './auth.interceptor';
 import { ErrorInterCeptor } from './error.interceptor';
 import { HttpErrorsComponent } from './http-errors/http-errors.component';
+import { UserAuthInterceptor } from './userAuthInterceptor';
 
 @NgModule({
 	declarations: [AppComponent, NavbarComponent, DashboardComponent, FooterComponent],
@@ -41,7 +42,8 @@ import { HttpErrorsComponent } from './http-errors/http-errors.component';
 	providers: [
 		{ provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
 		{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-		{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterCeptor, multi: true }
+		{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterCeptor, multi: true },
+		{ provide: HTTP_INTERCEPTORS, useClass: UserAuthInterceptor, multi: true }
 	],
 	bootstrap: [AppComponent]
 })

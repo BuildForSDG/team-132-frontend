@@ -9,8 +9,7 @@ import { ToasterService } from 'src/app/services/toastr.service';
 
 @Component({
 	selector: 'app-farmers',
-	templateUrl: './farmers.component.html',
-	styleUrls: ['./farmers.component.css']
+	templateUrl: './farmers.component.html'
 })
 export class FarmersAdminComponent implements OnInit, OnChanges {
 	farmers: Iresponce[];
