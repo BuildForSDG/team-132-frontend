@@ -1,0 +1,111 @@
+[
+    {
+      "productId": 1,
+      "name": "Organic Pineapples",
+      "price": 300,
+      "productCode": "GDN-0011",
+      "starRating": 3.2,
+      "description": "Available all year from our Ugandan farmers, this bold fruit stands out in both sweet and savoury dishes. Very effective in fighting inflammation.",
+      "details":"Available all year from our Ugandan farmers, this bold fruit stands out in both sweet and savoury dishes. Very effective in fighting inflammation",
+      "imageUrl":"assets/images/pineapple.jpg"
+    },
+    {
+      "productId": 2,
+      "name": "Organic Strawberries",
+      "price": 300,
+      "productCode": "GDN-0023",
+      "starRating": 4.2,
+      "description": "This sweet healthy treat is packed with vitamins and grown with commitment to sustainable farming",
+      "details":"TECNO Spark 3 smartphone features a Android 9 Pie Os, 6.2-inch display,Helio A22 chipset, 8 MP selfie camera, 13 MP + 2 MP dual rear camera, 2 GB RAM,16 GB internal memory, and a 3500 mAh battery. Order for this TECNO Spark 3 smartphone online from CROMO-Eletronic Store and have it delivered to you.",
+      "releaseDate": "April 21, 2016",
+      "imageUrl":"assets/images/fresh.jpg"
+    },
+    {
+      "productId": 3,
+      "name": "Oranges",
+      "price": 1,
+      "productCode": "TBX-0048",
+      "starRating": 4.8,
+      "description": "The orange is the fruit of the citrus species Citrus × Sinensis in the family Rutaceae. It is also called sweet orange, to distinguish it from the related Citrus × Aurantium, referred to as bitter orange",
+      "details":"The M6 Plus is equipped with a powerful 6020mAh polymer battery in a 8.2mm to thin body,complemented by  an intelligent power management system that allows every milliampere of electricity  to be used. The measured M6 plus can talk for 55 hours in a row, the video can be played continuously for 16.4 hours, and the measured standby is 794 hours. The M6 Plus is equipped with an amazing 6020mAh polymer battery.",
+      "releaseDate": "July 21, 2016",
+      "imageUrl":"assets/images/RF-10046-RIPE-ORGANIC-ORGANIC-ORANGES.jpg"
+    },
+    {
+      "productId": 4,
+      "name": "Watermelon",
+      "price": 140,
+      "productCode": "TBX-0022",
+      "starRating": 4.8,
+      "description":"Packed with Vitamin C & A, melons are popular for fruit salad and juicing. Perfect quencher and helps reduce cholesterol levels and blood pressure",
+      "details":"Samsung’s Galaxy A products are a range of devices packed with compelling innovations for daily life. As the newest addition to the Galaxy A family, the Galaxy A10s delivers powerful performance and optimized functionality primed for a new era of communication and connectivity. Thanks to its 4,000mAh battery, the Galaxy A10s can keep up with you all day, whether you are gaming, streaming, or broadcasting live. The all-new dual camera means brighter, clearer photos, while depth detection intelligently recognizes backgrounds and allows you to add artistic effect to your images. The Galaxy A10s’ remarkable 6.2-inch Infinity-V Display provides an immersive experience when catching up on your favorite content, and with the addition of a fingerprint scanner to the Galaxy A10s, you can be sure to keep your data safe. Place your order for this amazing product from CROMO-Eletronic Store   and have it delivered to your doorstep at an amazing price",
+      "releaseDate": "August 21, 2016",
+      "imageUrl":"assets/images/organic-water-melon-300x300.png"
+    },
+    {
+      "productId": 5,
+      "name": "Potatoes",
+      "price": 9999,
+      "productCode": "GMG-0042",
+      "starRating": 3.7,
+      "description": "The potato (also referred to as tater, tattie, and spud) is a root vegetable that is part of the plant Solanum tuberosum. This perennial is part of the family Solanaceae or the nightshades. In many contexts, the word potato refers to the edible starchy tuber portion of the plant, but it can also refer to the plant itself, which is native to the Americas.",
+      "details":"Tecno Pouvoir 3 runs on the latest Android 8.1 Oreo operating system with 1.28 GHz Quad-Core processor and a 5000mAh Battery. It comes with a bigger 6.2-inch HD+ SuperFullVIEW capacitive touchscreen which displays quality visuals. The phone comes with a 13MP rear camera and an 13MP selfie shooter. It has 32GB of internal storage and 2GB of RAM. Order for this Tecno Pouvior 3 online from CROMO-Eletronic Store and have it delivered to your doorstep.",
+      "releaseDate": "January 21, 2016",
+      "imageUrl":"assets/images/81TJK4QAa2L._SL1500_-300x300.jpg"
+    },
+    {
+      "productId": 6,
+      "name": "Broccoli",
+      "price":140,
+      "productCode":"COD-1111",
+      "starRating":4.8,
+      "description":"Broccoli is an edible green plant in the cabbage family (Brassicas) whose large flowering head and stalk is eaten as a vegetable. The word broccoli comes from the Italian plural of broccolo, which means “the flowering crest of a cabbage”, and is the diminutive form of brocco, meaning “small nail” or “sprout”.",
+      "details": "Nokia 5.1 as a phablet features 5.5 inch display afford you a vivid and different visual experience. 2 cameras, 16.0MP back camera and 8.0MP front camera, you can enjoy images with 1080 x 2160 high resolution. It comes with most of the features we've come to expect from a phablet, including 3GB RAM 32GB ROM storage equipped with Android 8.0 MT6755S and 2970mAh big capacity battery that you can play games faster.",
+      "releaseDate":"April 21, 2016",
+      "imageUrl":"assets/images/d852987f86aeae8b65926f9e7a260c28285ea744-300x300.jpg"
+    },
+    {
+      "productId":7,
+      "name": "Cabbage",
+      "price":200,
+      "productCode": "TDD-LTE",
+      "starRating": 3.6,
+      "description":"Cabbage or headed cabbage is a leafy green, red, or white biennial plant grown as an annual vegetable crop for its dense-leaved heads",
+      "details":"4GB + 64GB Max. Expansion Supported：256GB Rear Camera： 48MP+13MP+2MP+5MP True Quad Cameras Front Camera ：13MP Front Camera  Battery： 4000mAh(Typ), Quick Charge OS ：Android 10.0 , Support Multi-Language, Support Google Service, Support OTG, Side Fingerprint, NFC Network：GSM:B2/B3/B5/B8                   WCDMA:B1/B5/B8                   FDD-LTE:B1/B3/B5/B7/B8/B20                  TDD-LTE:B38/B40/B41 SIM Card Type：Nano SIM + Nano SIM+TF Recharging current：5V 2A Wireless Charging：NA",
+      "releaseDate":"January 21, 2018",
+      "imageUrl":"assets/images/1800x1200_benefits_of_cabbage_slideshow-300x300.jpg"
+    },
+    {
+      "productId":8,
+      "name":"Macademia Nuts",
+      "price":140,
+      "productCode":"TBX-0089",
+      "starRating":4.0,
+      "description":"Macadamia is a genus of four species of trees indigenous to Australia, and constituting part of the plant family Proteaceae. They are native to north eastern New South Wales and central and south eastern Queensland.",
+      "details":"GPS: Yes,Built in, Also support A-GPS, Support voice navigation (navigation program not  included)  WiFi: Support 802.11 bgn wireless, support hotspot  Bluetooth: Support Bluetooth4.0  Sensor: Light sensor , Acceleration sensor , Direction sensor  Audio Out Port: 3.5mm   USB Port: Micro-USB2.0      Battery: 4000mAh      Other Features:  Face recognition, Play Store, Air Distance Gesture, Smart Wake, Calculator, Calendar, Alarm, Camera Gallery,Video Recorder, Audio Player, Sound Recorder, FM Radio, Email, Gmail, Flashlight, etc      Available language: Bahasa Indonesia, Bahasa Melayu, Catala, Cestina, Dansk, Deutsch, Eesti, English, Spanish, Filipino, French, Hrvastki, Italian, Latviesu, Lietuviu, Magyar, Nederlands, Norsk bokmal, Polski, Portuguese, Romana, Slovencina, Slovenscina, Suomi, Svenska, Viet, Turkish, Greek, Bulgarian, Russian, Cpnckn, Ykpaihcbka, Persian, Thai, Korean, Chinese, Japanese",
+      "releaseDate":"January 21, 2019",
+      "imageUrl":"assets/images/fa5d57bd6443f815-300x300.jpg"
+    },
+    {
+      "productId":9,
+      "name":"Grapes",
+      "price":140,
+      "productCode":"GDN-0011",
+      "starRating":4.8,
+      "description":"A grape is a fruit, botanically a berry, of the deciduous woody vines of the flowering plant genus Vitis. Grapes can be eaten fresh as table grapes or they can be used for making wine, jam, juice, jelly, grape seed extract, raisins, vinegar, and grape seed oil.",
+      "details":"Infinix HOT 8, 6.6 HD,Android 9, 32gb/2gb Ram,8MP,+Tripple Rear Camera,13MP+2MP,4G LTE,5000 Mah,Face Unlock, Fingerprint-cyan The main camera of Infinix Hot 8 is 13 MP, and front selfie camera is 8 MP. It has 16GB Built-in storage and 1GB RAM. Order  for this HOT 7 CROMO-Eletronic Store and have it delivered right at your doorstep",
+      "releaseDate":"January 21, 2020",
+      "imageUrl":"assets/images/van-zyverden-fruit-trees-plants-83723-64_1000-600x600.jpg"
+    },
+    {
+      "productId":10,
+      "name":"omena",
+      "price":150,
+      "productCode":"COD-1111",
+      "starRating":4.7,
+      "description":"The silver cyprinid also known as the Lake Victoria sardine or mukene, is a species of pelagic, freshwater ray-finned fish in the carp family, Cyprinidae from East Africa. it is the only member of the genus Rastrineobola",
+      "details":"Huawei Y7 Prime (2019) smartphone was announced in January 2019. The phone comes with a 6.26-inch touchscreen display with a resolution of 720x1520 pixels and an aspect ratio of 19:9.  Huawei Y7 Prime (2019) is powered by an octa-core Qualcomm 450 processor. It comes with 3GB of RAM. The Huawei Y7 Prime (2019) runs Android 8 and is powered by a 4,000mAh battery. As far as the cameras are concerned, the Huawei Y7 Prime (2019) on the rear packs a 2 & 13-megapixel camera with an f/1.8 aperture. The rear camera setup has autofocus. It sports a 16-megapixel camera on the front for selfies. The Huawei Y7 Prime (2019) runs EMUI 8.2 based on Android 8 and packs 32GB of inbuilt storage that can be expanded via microSD card (up to 512GB). The Huawei Y7 Prime (2019) is a dual-SIM (GSM and GSM) smartphone",
+      "releaseDate":"January 21, 2020",
+      "imageUrl":"assets/images/OMENA-300x240.jpg"
+    }
+  ]

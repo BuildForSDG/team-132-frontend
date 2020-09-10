@@ -1,0 +1,61 @@
+<div class="fluid-container main">
+	<div class="sidebar-container">
+		<div class="sidebar-logo bg-success">
+			goOrganic
+		</div>
+		<ul class="sidebar-navigation">
+			<li class="header">Admin Panel</li>
+			<li>
+				<a [routerLink]="['home']" *ngIf="adminIsAuth">
+					<i class="fa fa-home" aria-hidden="true"></i> Home
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['profile']" *ngIf="adminIsAuth">
+					<i class="fa fa-user" aria-hidden="true"></i> Profile
+				</a>
+			</li>
+			<li class="header" *ngIf="adminIsAuth">Panel Menu</li>
+			<li *ngIf="adminIsAuth">
+				<a [routerLink]="['agrocompanies']">
+					<i class="fa fa-user-circle-o" aria-hidden="true"></i> Agro-Companies
+				</a>
+			</li>
+			<li *ngIf="adminIsAuth">
+				<a [routerLink]="['insurance']">
+					<i class="fa fa-university" aria-hidden="true"></i> Insurance
+				</a>
+			</li>
+			<li *ngIf="adminIsAuth">
+				<a [routerLink]="['/admin/panel/farmers']">
+					<i class="fa fa-user-o" aria-hidden="true"></i>Farmers
+				</a>
+			</li>
+			<li *ngIf="adminIsAuth">
+				<a [routerLink]="['products']">
+					<i class="fa fa-users" aria-hidden="true"></i> Products
+				</a>
+			</li>
+			<li class="header">Authorization</li>
+			<li>
+				<a [routerLink]="['login']" *ngIf="!adminIsAuth">
+					<i class="fa fa-home" aria-hidden="true"></i> Login
+				</a>
+			</li>
+			<li>
+				<a [routerLink]="['signup']" *ngIf="!adminIsAuth">
+					<i class="fa fa-home" aria-hidden="true"></i> Signup
+				</a>
+			</li>
+			<li *ngIf="adminIsAuth">
+				<a (click)="logout()">
+					<i class="fa fa-tachometer" aria-hidden="true"></i> Logout
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-container" [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
+		<router-outlet #o="outlet"></router-outlet>
+	</div>
+</div>

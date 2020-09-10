@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+	<!-- Main component for a primary marketing message or call to action -->
+	<div>
+		<br>
+		<mat-card>
+            <div>
+				<div class="text-center bg-success animate__animated animate__bounceInRight" style="border-radius: 10px;">
+					<br>
+					<span class="d-block"><i class="fa fa-user"></i></span>
+					<h1 style="color: white;" class="display-4">goOrganic</h1>
+					<p class="text-light mb-2 font-weight-bold">User's Point</p>
+					<br>
+				</div>
+				<br>
+				<div class="row">
+				<form #filterForm="ngForm" (ngSubmit)="save(filterForm.value)" class="col-md-4">
+					<br>
+					<div class="form-group col-md-12">
+						<div class="input-group">
+							<select type="text" class="form-control form-control-sm" name="search" ngModel #search="ngModel" placeholder="select filter option">
+								<option  value="all">All</option>
+								<option  value="buyer">Buyers</option>
+								<option  value="farmer">Farmers</option>
+								<option  value="agro-chemical-company">Agro-Chemical-Companies</option>
+								<option  value="admin">Adminstrator</option>
+							</select>
+							<div class="input-group-append">
+								<button type="submit" class="btn btn-sm btn-success text-light">Filter</button>
+							</div>
+						</div>
+
+					</div>
+				</form>
+				</div>
+			</div>
+			<div class="table-responsive" style="z-index: 10;" >
+				<br>
+				<table *ngIf="farmers && farmerList.length > 0" class="table">
+					<thead class="text-center">
+						<th>Username</th>
+						<th>Email</th>
+						<th>Contacts</th>
+						<th>Alt Contacts</th>
+						<th>Role</th>
+						<th>Actions</th>
+					</thead>
+					<tbody>
+						<tr *ngFor="let farmer of farmerList" class="text-center">
+							<td>{{farmer.firstname}}, {{farmer.lastname}}</td>
+							<td>{{farmer.email}}</td>
+							<td>{{farmer.phone}}</td>
+							<td>{{farmer.alternatePhone}}</td>
+							<td>{{farmer.role}}</td>
+							<td>
+								<button class="btn btn-danger" (click)="detete(farmer._id)">Delete</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</mat-card>
+	</div>
+
+</div>

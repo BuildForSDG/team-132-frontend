@@ -1,0 +1,147 @@
+<div class="container-fluid main">
+	<mat-card id="matCard">
+	  <br>
+      <div class="col-md-6">
+		<div style="color: #fff;">
+			<h1 style="font-size: 2rem;">goOrganic</h1>
+			<br>
+			<p>Fill the form below...</p>
+		</div>
+		<br>
+		<form [formGroup]="post" (ngSubmit)="save()">
+
+			<div class="form-group"
+			[ngClass] = "{'error': name.invalid && (name.dirty || name.touched)}"
+			>
+			  <label for="name">Product Name *</label>
+			  <input
+				type="text"
+				formControlName="name"
+				class="form-control"
+				id="name"
+				placeholder="product name..."
+			  >
+			  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+				<em *ngIf="name.errors.required">
+				   Product name is required
+				</em>
+				<em *ngIf="name.errors.minlength">
+				   The product name is too short
+				</em>
+			  </div>
+			</div>
+
+			<div class="form-group"
+			[ngClass] = "{'error': quatity.invalid && (quatity.dirty || quatity.touched)}"
+			>
+			  <label for="quatity">Product quantity *</label>
+			  <input
+				type="text"
+				formControlName="quatity"
+				class="form-control"
+				id="quatity"
+				placeholder="product quantity ie 0.01 kg, 1 Liter..."
+			  >
+			  <div *ngIf="quatity.invalid && (quatity.dirty || quatity.touched)">
+				<em *ngIf="quatity.errors.required">
+				   Product quantity is required
+				</em>
+			  </div>
+			</div>
+
+			<div class="form-group"
+			    [ngClass] = "{'error': amount.invalid && (amount.dirty || amount.touched)}"
+			>
+			  <label for="amount">Amount *</label>
+			  <input
+				type="number"
+				formControlName="amount"
+				class="form-control"
+				id="amount"
+				placeholder="product amount ... Ksh"
+			  >
+			  <div *ngIf="amount.invalid && (amount.dirty || amount.touched)">
+				<em *ngIf="amount.errors.required">
+				   Product name is required
+				</em>
+			  </div>
+			</div>
+
+			<div class="form-group"
+			    [ngClass] = "{'error': rating.invalid && (rating.dirty || rating.touched)}"
+			>
+			  <label for="rating">Product Rating *</label>
+			  <select
+				type="text"
+				formControlName="rating"
+				class="form-control"
+				id="rating"
+				placeholder="product rating"
+			  >
+				<option value=""></option>
+				<option value="2">2</option>
+				<option value="4">4</option>
+				<option value="6">6</option>
+				<option value="8">8</option>
+				<option value="10">10</option>
+			 </select>
+			  <div *ngIf="rating.invalid && (rating.dirty || rating.touched)">
+				<em *ngIf="rating.errors.required">
+				   Product name is required
+				</em>
+			  </div>
+			</div>
+
+			<div class="form-group"
+			    [ngClass] = "{'error': details.invalid && (details.dirty || details.touched)}"
+			>
+			  <label for="details">Product Details *</label>
+			  <textarea
+				type="text"
+				formControlName="details"
+				class="form-control"
+				id="details"
+				placeholder="product brief details"
+			  ></textarea>
+			  <div *ngIf="details.invalid && (details.dirty || details.touched)">
+				<em *ngIf="details.errors.required">
+				   Product name is required
+				</em>
+				<em *ngIf="details.errors.maxlength">you have exceeded the numbers of words </em>
+				<em *ngIf="details.errors.restrictedWords">restricted words found: {{details.errors.restrictedWords}}</em>
+
+			  </div>
+			</div>
+
+			<div class="form-group"
+			     [ngClass] = "{'error': description.invalid && (description.dirty || description.touched)}"
+			>
+			  <label for="description">Product Descriptions *</label>
+			  <textarea
+					type="text"
+					matInput
+					class="form-control"
+					id="description"
+					formControlName="description"
+					placeholder="enter product description..."
+					rows="5"></textarea>
+			  <div *ngIf="description.invalid && (description.dirty || description.touched)">
+				<em *ngIf="description.errors.required">
+				   Product name is required
+				</em>
+				<em *ngIf="description.errors.maxlength">you have exceeded the number of words.</em>
+				<em *ngIf="description.errors.restrictedWords">restricted words found: {{description.errors.restrictedWords}}</em>
+			  </div>
+			</div>
+
+
+			<button type="submit" class="btn btn-outline-secondary" id="btn-one">Save</button>
+			<button type="button" class="btn btn-outline-secondary" id="btn-two" (click)="cancel()">Cancel</button>
+
+
+
+		</form>
+	  </div>
+	</mat-card>
+</div>
+

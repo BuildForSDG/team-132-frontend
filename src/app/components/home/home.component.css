@@ -1,0 +1,163 @@
+.main {
+  padding-top: 13vh;
+}
+
+.submain,
+#slider4,
+.carousel-inner,
+.carousel-item {
+  /* background-image: url('~src/assets/images/mt-1021-gallery-img05-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  margin-top: 0;
+  height: 87vh;
+  padding-top: 0;
+}
+
+#submain-child,
+#submain-child2,
+#submain-child3,
+#submain-child4,
+#submain-child5 {
+  opacity: 0.8;
+  border-radius: 2rem;
+}
+
+.display-1 {
+  font-size: 2.5rem;
+}
+
+.head {
+  font-size: 3em;
+  font-weight: lighter;
+  color: green;
+  padding-bottom: 30px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.signup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six {
+  background-color: green;
+}
+
+#btn-one {
+  color: green;
+  background-color: #fff;
+}
+
+#btn-two {
+  color: #fff;
+  background-color: green;
+}
+
+.row {
+  border-top: 20px solid #fff;
+}
+
+.amos {
+  border-radius: 15px;
+}
+
+.h-brand {
+  font-size: 3em;
+}
+
+#childA {
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  border-color: green;
+}
+
+@media screen and (max-width: 575px) {
+  img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-radius: 21px 21px 0;
+  }
+
+  .child {
+    width: 90%;
+    border-radius: 21px 21px 0;
+  }
+
+  #display,
+  #display1,
+  #display2,
+  #display3,
+  #display4 {
+    display: inline-block;
+    padding-bottom: 10vh;
+    z-index: 0;
+  }
+
+  .display-1 {
+    font-size: 2rem;
+  }
+
+  #paras,
+  #paras1,
+  #paras2,
+  #paras3,
+  #paras4 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    border-radius: 21px 21px 0;
+  }
+
+  #display,
+  #display1,
+  #display2,
+  #display3,
+  #display4 {
+    z-index: 0;
+  }
+
+  .child {
+    width: 80%;
+    min-height: 300px;
+    border-radius: 21px 21px 0;
+  }
+
+  .side {
+    margin-left: 0;
+    border-left: 3px solid rgb(74, 146, 212);
+  }
+}

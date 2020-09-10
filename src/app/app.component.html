@@ -1,0 +1,11 @@
+<span class="fa fa-spinner spinner" *ngIf="loading"></span>
+<app-navbar *ngIf="!loading"></app-navbar>
+
+<div [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''" class="animate__animated animate__fadeInRight"
+	style="min-height: 100vh;">
+	<router-outlet #o="outlet"></router-outlet>
+</div>
+
+<div class="animate__animated animate__fade animate__slow" *ngIf="!loading" [ngClass]="{'footer':loading}">
+	<app-footer></app-footer>
+</div>

@@ -1,0 +1,33 @@
+<mat-card *ngIf="product" class="shadow-lg p-3 mb-5 bg-white rounded"  id="matCard"
+	[routerLink]="[product.productId]" [title]="'Click to view product details'">
+	<mat-card-header>
+		<mat-card-title class="mat-card-title text-success">{{product?.name}}</mat-card-title>
+		<mat-card-subtitle>Fresh Product!</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content>
+		<div class="row px-2">
+			<img [src]="product?.imageUrl" class="card-img-top" [alt]="product?.name">
+			<br>
+            <div>
+				<div class="">
+					<div   class="crop div" [style.width.px]="starWidth" [title]="rating">
+						<div class="div" style="width: 75px">
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+				</div>
+				<p>
+					<span>{{product?.price | currency:"ksh ": "symbol": "1.2-2"}}</span><br>
+					<span>Serial: {{product?.productCode}}</span><br>
+				</p>
+			</div>
+		</div>
+		<div class="d-block">
+			<p class="grad">Click to view in product-details</p>
+		</div>
+	</mat-card-content>
+</mat-card>

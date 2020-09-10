@@ -1,0 +1,61 @@
+<div class="main container bg-light">
+	<br>
+	<div class="text-center animate__animated animate__bounceInRight">
+		<span class="d-block"><i class="fa fa-user"></i></span>
+		<h1 style="color: green;">goOrganic</h1>
+		<p class="lead mb-2">Please Login Here...</p>
+		<p class="text-success mb-2 font-weight-bold">User's Point</p>
+	</div>
+	<div class="sub-main row justify-content-center">
+		<br>
+		<br>
+		<span class="fa fa-spinner spinner" *ngIf="loading"></span>
+		<div class="col-sm-6 col-md-8" *ngIf="!loading">
+			<form  novalidate #loginForm="ngForm" (ngSubmit)="save(loginForm)">
+
+				<div class="row justify-content-around mt-2">
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': email.invalid && (email.touched || email.dirty || mouseOver)}">
+							<label for="email">Email:</label>
+							<input type="text" ngModel name="email" #email="ngModel" placeholder="email(required)"
+								class="form-control" required email>
+							<div *ngIf="email.invalid && (email.touched || email.dirty || mouseOver)">
+								<em *ngIf="email.errors.required">email is required.</em>
+								<em *ngIf="email.errors.email">enter a valid email</em>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': pass.invalid && (pass.touched || pass.dirty || mouseOver)}">
+							<label for="password">Password:</label>
+							<input type="password" ngModel name="password" #pass="ngModel" class="form-control"
+								placeholder="password(required)" required>
+							<div *ngIf="pass.invalid && (pass.touched || pass.dirty || mouseOver)">
+								<em *ngIf="pass.errors.required">password is required.</em>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="w-75 mx-auto">
+					<br>
+					<span class="d-block" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+						<button type="submit" class="btn btn-success shadow-lg p-1 mb-2 rounded text-white"
+							[disabled]="loginForm.invalid || loginForm.invalid" style="width: 100%;"
+							*ngIf="!loading">Save</button>
+					</span>
+					<button type="button" class="btn btn-outline-secondary mt-2" (click)="cancel()" style="width: 100%;">Cancel</button>
+					<p class="text-success mt-2 font-weight-bold">Dont have an account? please
+						<span routerLink='/user/signup' class="text-danger" id="log"> REGISTER</span>
+					</p>
+				</div>
+
+
+			</form>
+			<br>
+		</div>
+	</div>
+</div>

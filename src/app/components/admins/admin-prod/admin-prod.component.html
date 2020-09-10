@@ -1,0 +1,48 @@
+<div class="container-fluid">
+
+	<!-- Main component for a primary marketing message or call to action -->
+	<div class='card'>
+		<div class='card-header text-success font-weight-bold'>
+			<button class="btn btn-success">Add Product</button>
+		</div>
+		<div class='card-body'>
+			<div class='row'>
+				<div class='table-responsive'>
+					<table class='table' *ngIf='products && products.length'>
+						<thead>
+							<tr>
+								<th>
+									<button class='btn btn-success' (click)='toggleImage()'>
+										{{showImage ? 'Hide' : 'Show'}} Image
+									</button>
+								</th>
+								<th>Product</th>
+								<th>Code</th>
+								<th>Available</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor='let product of products'>
+								<td>
+									<img *ngIf='showImage' [src]='product.imageUrl' [style.width.px]='imageWidth'
+										[style.margin.px]='imageMargin'>
+								</td>
+								<td>
+									{{product.name}}
+								</td>
+								<td>{{ product.productCode}}</td>
+								<td>{{ product.releaseDate }}</td>
+								<td>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</td>
+								<td>
+									<button class="btn btn-warning mr-3">Edit</button>
+									<Button class="btn btn-danger">Delete</Button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+</div>

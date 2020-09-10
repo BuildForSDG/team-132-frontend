@@ -1,0 +1,49 @@
+<div class="container main">
+	<div class="bg-success text-light mb-2 text-center bg-success animate__animated animate__bounceInRight" style="border-radius: 10px;">
+		<h2 class="text-center font-weight-bold">Shopping Cart</h2>
+		<p class="lead">Welcome to goOrganic</p>
+		<div class="clearfix"><p class="float-right mr-2 bg-white text-danger p-2" style="font-size: 1.2em;border-radius: 3px;"><i class="fa fa-shopping-cart"></i> Items: {{calcTotal()}}</p></div>
+	</div>
+    <div class="row mx-2">
+		<div class="col-md-8">
+           <div class="row justify-content-around">
+			   <div class="col-md-5 border border-success rounded mb-1"  *ngFor="let product of products" >
+			    <br>
+				<app-cart [product]="product" (productRemoved)="removeProduct($event)" (productNum)="productNum($event)"></app-cart>
+				<br>
+			   </div>
+		   </div>
+		</div>
+		<div class="col-md-4 border border-info rounded">
+			<br>
+			<h2 class="bg-success text-white text-center" style="width: 100%;">goOrganic Checkout</h2>
+			<div class="table">
+				<thead>
+					<tr>
+						<th>Subtotal:</th>
+						<th>{{totalPrice2 | currency: 'KSH ':'symbol':'1.2-2'}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>VAT</td>
+						<td>KSH 0</td>
+					</tr>
+					<tr>
+						<td>TOTAL</td>
+						<td class="text-warning font-weight-bold">{{totalPrice2 | currency: 'KSH ':'symbol':'1.2-2'}}</td>
+					</tr>
+				</tbody>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<button class="btn btn-success text-light" [routerLink]="['/services/products']">Shop</button>
+				</div>
+				<div class="col-md-5">
+					<button class="btn btn-warning text-danger">Checkout</button>
+				</div>
+			</div>
+			<br>
+		</div>
+	</div>
+</div>

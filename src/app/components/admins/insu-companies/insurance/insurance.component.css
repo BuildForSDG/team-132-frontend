@@ -1,0 +1,7 @@
+p {
+  font-weight: normal;
+}
+
+.delete {
+  animation: animate__backOutDown;
+}

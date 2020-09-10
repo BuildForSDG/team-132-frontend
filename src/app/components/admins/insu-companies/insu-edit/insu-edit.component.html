@@ -1,0 +1,73 @@
+<div>
+	<br>
+	<div>
+		<h2 class="text-center text-success font-weight-bold display-3">{{pageTitle}}</h2>
+		<br>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-sm-8 bg-warning" style="border-radius: 5px;">
+			<form [formGroup]='editForm' (ngSubmit)="save(editForm.value)" novalidate>
+                <br>
+				<div class="row justify-content-around">
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': companyName.invalid && (companyName.dirty || companyName.touched)}">
+							<label for="companyName">companyName *</label>
+							<input type="text" class="form-control" formControlName='companyName'
+								placeholder="companyName(required)" id="companyName">
+							<div *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+								<em *ngIf="companyName.errors.required">companyName is required</em>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': businessEmail.invalid && (businessEmail.dirty || businessEmail.touched)}">
+							<label for="businessEmail">Business Email *</label>
+							<input type="email" class="form-control" formControlName='businessEmail'
+								placeholder="businessEmail(required)" id="businessEmail">
+							<div *ngIf="businessEmail.invalid && (businessEmail.dirty || businessEmail.touched)">
+								<em *ngIf="businessEmail.errors.required">businessEmail is required</em>
+								<em *ngIf="businessEmail.errors.email">enter a valid email</em>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row justify-content-around">
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': idNumber.invalid && (idNumber.dirty || idNumber.touched)}">
+							<label for="idNumber">ID Number *</label>
+							<input type="number" class="form-control" formControlName='idNumber'
+								placeholder="idNumber(required)" id="idNumber">
+							<div *ngIf="idNumber.invalid && (idNumber.dirty || idNumber.touched)">
+								<em *ngIf="idNumber.errors.required">idNumber is required</em>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<div class="form-group"
+							[ngClass]="{'error': pocPhoneNumber.invalid && (pocPhoneNumber.dirty || pocPhoneNumber.touched)}">
+							<label for="pocPhoneNumber">pocPhoneNumber *</label>
+							<input type="tel" class="form-control" formControlName="pocPhoneNumber"
+								placeholder="pocPhoneNumber(required)">
+							<div *ngIf="pocPhoneNumber.invalid && (pocPhoneNumber.dirty || pocPhoneNumber.touched)">
+								<em *ngIf="pocPhoneNumber.errors.required">pocPhoneNumber is required</em>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="w-75 mx-auto mb-3">
+					<button type="submit" class="btn btn-success d-block"
+						[disabled]="editForm.invalid || editForm.pristine" style="width: 100%;">Save</button>
+					<button class="btn btn-outline-secondary d-block mt-2" (click)="cancel()" style="width: 100%;">Cancel</button>
+				</div>
+			</form>
+			<br>
+			<br>
+		</div>
+	</div>
+</div>
